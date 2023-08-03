@@ -1,18 +1,21 @@
 import React from 'react'
-import Anchor from '../Anchor'
+import Anchor from '../Anchor/Index'
 
-function Index() {
+
+function Navbar() {
     const data = [
-        {url:"#",text: "Home"},
-        {url:"#", text:"Cities"}
+        {url:"#",content:"Home"},
+        {url:"#",content:"Cities"}
     ]
 
   return (
     <nav>
+      <Anchor />
+        
         {data.map((element,index)=> <Anchor key ={index} url={element.url} text={element.text}/>)}
         <button>Login</button>
             </nav>
   )
 }
 
-export default Index
+export default Navbar

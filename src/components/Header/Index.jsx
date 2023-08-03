@@ -2,8 +2,10 @@ import React from 'react'
 import Navbar from '../Navbar'
 import './styles.css'
 
-export default function Index() {
+ function Header() {
   return (
     <Navbar/>
+    
   )
 }
+export default Header

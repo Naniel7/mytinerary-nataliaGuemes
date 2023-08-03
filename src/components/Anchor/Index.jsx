@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function Index() {
+export default function Anchor({url,content}) {
   return (
-    <div>Index</div>
+    <>
+    <a href={url}>{content}</a>
+    </>
   )
 }
