@@ -1,5 +1,5 @@
 import React from 'react'
-import Anchor from '../Anchor/Index'
+import Anchor from './Anchors'
 
 
 function Navbar() {
@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <nav>
-      <Anchor />
+      <Anchor/>
         
         {data.map((element,index)=> <Anchor key ={index} url={element.url} text={element.text}/>)}
         <button>Login</button>

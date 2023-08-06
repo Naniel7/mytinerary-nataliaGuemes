@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from '../Navbar'
-import './styles.css'
+import Navbar from './Navbar'
+
 
  function Header() {
   return (
