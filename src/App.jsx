@@ -1,7 +1,7 @@
 import { Children, useState } from 'react'
 import './App.css'
-import Card from './components/Cards'
 import Layout from './layouts/Main'
+import Hero from './components/Hero'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Layout>
-  
+  <Hero/>
       </Layout>
     </>
   )
