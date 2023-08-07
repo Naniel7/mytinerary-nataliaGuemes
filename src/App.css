@@ -3,8 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     background-color: rgb(245, 248, 255);
-    text-decoration: none;
 }
+
 
 .header {
     width: 90vw;
@@ -28,7 +28,12 @@ nav{
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-   
+
+}
+
+nav a{
+    text-decoration: none;
+    color: #888;
 }
 
 .header h2{
@@ -45,7 +50,7 @@ nav{
     display: flex;
     align-content: center;
     align-items: center;
-  gap: 30px;
+  gap: 10vh;
 }
 
 .hero-text{
@@ -54,9 +59,44 @@ nav{
     font-size: large;
 }
 
+.hero-text button{
+    display: flex;
+    justify-content: center;
+    max-width: fit-content;
+}
+
 
 .hero-img img{
   max-width: 35vh;
   border-radius: 50%;
   box-shadow: 2px 2px 4px #888;
 }
+
+.footer{
+    position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+
+}
+.footer p{
+    margin: 0;
+}
+
+button{
+    text-decoration: none;
+    color: #888;
+
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 4%;
+    border-radius: 30px !important;
+    background-color: rgb(208, 208, 245);
+    height: 7vh;
+    border: 1px;
+    border-color: fff;
+    box-shadow: 2px 2px 4px #888;
+}
+
