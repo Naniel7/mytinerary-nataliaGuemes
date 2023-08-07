@@ -41,25 +41,22 @@ nav{
 
 
 .hero {
-    margin: 5vw;
+    margin: 15vw;
     display: flex;
+    align-content: center;
     align-items: center;
-
+  gap: 30px;
 }
 
 .hero-text{
     display: flex;
     flex-direction: column;
-}
-.hero h3{
     font-size: large;
 }
 
-.hero img{
-    width: 30vw;
-}
 
-.hero p{
-    font-size: medium;
+.hero-img img{
+  max-width: 35vh;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px #888;
 }
-
