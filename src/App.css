@@ -4,6 +4,7 @@
     box-sizing: border-box;
     background-color: rgb(245, 248, 255);
 }
+
 body{
     height: 100%;
 }
@@ -25,22 +26,6 @@ button {
     box-shadow: 2px 2px 4px #888;
 }
 
-@media (min-width: 1200px) {
-    .header {
-        padding: 1vh;
-        margin-top: 2vw;
-    }
-
-    nav {
-        gap: 30px;
-        font-size: 20px;
-        font-weight: 900;
-    }
-    button {
-        font-weight: 700;
-        height: 6vh;
-    }
-}
 
 /*Header*/
 .header {
@@ -86,12 +71,15 @@ nav a {
     align-content: center;
     align-items: center;
     gap: 10vh;
+    
 }
 
 .hero-text {
     display: flex;
     flex-direction: column;
     font-size: 25px;
+    flex-wrap:wrap;
+    gap: 2vh;
 }
 
 .hero-text button {
@@ -105,7 +93,7 @@ nav a {
 }
 
 .hero-img img {
-    max-width: 35vh;
+    max-width: 37vh;
     border-radius: 50%;
     box-shadow: 2px 2px 4px #888;
 }
