@@ -4,17 +4,21 @@
     box-sizing: border-box;
     background-color: rgb(245, 248, 255);
 }
-
+body{
+    height: 100%;
+}
 
 button {
     text-decoration: none;
-    color: #888;
+    gap: 10px;
+    padding: 5px;
+    color: #ffffff;
     font-weight: 500;
     display: flex;
     align-items: center;
     padding: 4%;
     border-radius: 30px !important;
-    background-color: rgb(208, 208, 245);
+    background-color: rgb(151, 151, 224);
     height: 7vh;
     border: 1px;
     border-color: fff;
@@ -47,7 +51,6 @@ button {
     align-content: center;
     padding: 3vh;
     margin: auto;
-    margin-top: 4vw;
 }
 
 nav {
@@ -78,7 +81,7 @@ nav a {
 
 /*Hero*/
 .hero {
-    margin: 15vw;
+    margin: 10vw;
     display: flex;
     align-content: center;
     align-items: center;
@@ -108,9 +111,7 @@ nav a {
 }
 /*Footer*/
 .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    
     width: 100%;
     text-align: center;
 }
@@ -118,4 +119,3 @@ nav a {
 .footer p {
     margin: 0;
 }
-

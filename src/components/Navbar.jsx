@@ -1,7 +1,6 @@
 import React from 'react'
 import Anchor from './Anchors'
-
-
+import { Icon } from '@mui/material'
 
 
 function Navbar() {
@@ -14,7 +13,9 @@ function Navbar() {
     <nav>
       <Anchor />
       {data.map((element, index) => <Anchor key={index} url={element.url} content={element.content} />)}
-      <button>Login</button>
+      <button> 
+        <div className='LogIcon'><Icon/></div>
+      Login</button>
     
     </nav>
   )
