@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(245, 248, 255);
+    text-decoration: none;
+}
+
+.header {
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+   padding: 3vh;
+   margin: auto;
+   margin-top: 4vw;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: black;
+    font-family: Segoe UI;
+    font-size: medium;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+   
+}
+
+.header h2{
+    font-family: Segoe UI;
+    font-size: 3vh;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+.hero {
+    margin: 5vw;
+    display: flex;
+    align-items: center;
+
+}
+
+.hero-text{
+    display: flex;
+    flex-direction: column;
+}
+.hero h3{
+    font-size: large;
+}
+
+.hero img{
+    width: 30vw;
+}
+
+.hero p{
+    font-size: medium;
+}
+
