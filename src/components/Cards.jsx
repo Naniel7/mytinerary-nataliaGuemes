@@ -1,13 +1,17 @@
 import React from 'react'
+import Card from 'react-bootstrap/Card'
+import data from '../data.json'
 
-export default function Card() {
+let CardCreator = ({image,title,subtitle}) => {
   return (
-  <div className='card'>
-    <div className='card-body'>
-        <h4 className='card-title'>My Title</h4>
-    </div>
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={image} />
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{subtitle}</Card.Text>
+      </Card.Body>
+    </Card>
+  );
+};
 
-
- </div>
-  )
-}
+export default CardCreator;

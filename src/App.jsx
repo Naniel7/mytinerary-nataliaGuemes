@@ -2,6 +2,7 @@ import { Children, useEffect, useState } from 'react'
 import './App.css'
 import Layout from './layouts/Main'
 import Hero from './components/Hero'
+import Carousel from '../src/components/Carousel';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,7 +16,7 @@ if(scrodw) setCount(pre => pre -1)
     <>
       <Layout>
         {count === 0 && <Hero />}
-        
+        <Carousel />        
       </Layout>
     </>
   )

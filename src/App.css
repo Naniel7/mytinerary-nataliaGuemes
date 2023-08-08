@@ -5,10 +5,6 @@
     background-color: rgb(245, 248, 255);
 }
 
-body{
-    height: 100%;
-}
-
 button {
     text-decoration: none;
     gap: 10px;
@@ -38,24 +34,6 @@ button {
     margin: auto;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    color: black;
-    font-family: Segoe UI;
-    font-size: medium;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-nav a {
-    text-decoration: none;
-    color: #888;
-}
-
 .header h2 {
     font-family: Segoe UI;
     font-size: 3vh;
@@ -66,6 +44,7 @@ nav a {
 
 /*Hero*/
 .hero {
+    height: 60vh;
     margin: 10vw;
     display: flex;
     align-content: center;
@@ -107,3 +86,16 @@ nav a {
 .footer p {
     margin: 0;
 }
+
+
+
+/*Carousel*/
+.cardsStyle{
+    display: flex; 
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 10%;
+    max-height: 250px;
+    transform: scale(1.1);
+} 
+
