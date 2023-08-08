@@ -19,15 +19,15 @@
       },
       {
         "id": 3,
-        "city": "Eichenwalde",
-        "country": "China",
-        "image": "Eichenwalde.jpg"
+        "city": "Katmandú",
+        "country": "Nepal",
+        "image": "Katmandú.jpg"
       },
       {
         "id": 4,
-        "city": "Guangzhou",
-        "country": "China",
-        "image": "/Guangzhou.jpg"
+        "city": "Hollywood",
+        "country": "USA",
+        "image": "Hollywood.jpg"
       },
       {
         "id": 5,
@@ -63,9 +63,9 @@
 
       {
         "id": 10,
-        "city": "Katmandú",
-        "country": "Nepal",
-        "image": "Katmandú.jpg"
+        "city": "Colosseo",
+        "country": "Italy",
+        "image": "Colosseo.jpg"
       },
       {
         "id": 11,
