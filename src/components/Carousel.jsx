@@ -29,7 +29,7 @@ const CarouselCreator = () => {
       <Carousel activeIndex={activeIndex} onSelect={handleSlideChange}>
         {cardGroups.map((cards, groupIndex) => (
           <Carousel.Item key={groupIndex}>
-            <div className="d-flex justify-content-between">
+            <div className=" cardStyle d-flex justify-content-between">
               {cards.map((card, cardIndex) => (
                 <CardCreator
                   image={card.image}
