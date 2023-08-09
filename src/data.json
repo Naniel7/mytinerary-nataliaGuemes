@@ -1,75 +1,75 @@
 [
     {
       "id": 0,
-      "city": "Château Guillard",
+      "place": "Château Guillard",
       "country": "France",
       "image": "Château Guillard.jpg"
     },
     {
         "id": 1,
-        "city": "Busan",
+        "place": "Busan",
         "country": "South Korea",
         "image": "Busan.jpg"
       },
     {
         "id": 2,
-        "city": "Rialto",
+        "place": "Rialto",
         "country": "Italy",
         "image": "Rialto.jpg"
       },
       {
         "id": 3,
-        "city": "Katmandú",
+        "place": "Katmandú",
         "country": "Nepal",
         "image": "Katmandú.jpg"
       },
       {
         "id": 4,
-        "city": "Hollywood",
+        "place": "Hollywood",
         "country": "USA",
         "image": "Hollywood.jpg"
       },
       {
         "id": 5,
-        "city": "Petra",
+        "place": "Petra",
         "country": "Jordan",
         "image": "Petra.jpg"
       },
 
       {
         "id": 6,
-        "city": "Paris",
+        "place": "Paris",
         "country": "France",
         "image": "Paris.jpg"
       },
       {
         "id": 7,
-        "city": "Ayutthaya",
+        "place": "Ayutthaya",
         "country": "Tailand",
         "image": "Ayutthaya.jpg"
       },
       {
         "id": 8,
-        "city": "Eichenwalde",
+        "place": "Eichenwalde",
         "country": "Germany",
         "image": "Eichenwalde.jpg"
       },
       {
         "id": 9,
-        "city": "Lijang",
+        "place": "Lijang",
         "country": "China",
         "image": "Lijang.jpg"
       },
 
       {
         "id": 10,
-        "city": "Colosseo",
+        "place": "Colosseo",
         "country": "Italy",
         "image": "Colosseo.jpg"
       },
       {
         "id": 11,
-        "city": "Ilios",
+        "place": "Ilios",
         "country": "Greek",
         "image": "Ilios.jpg"
       }

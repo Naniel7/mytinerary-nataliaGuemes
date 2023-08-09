@@ -1,6 +1,5 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
-import data from '../data.json'
 
 let CardCreator = ({image,title,subtitle}) => {
   return (

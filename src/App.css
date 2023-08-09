@@ -91,11 +91,6 @@ button {
 
 /*Carousel*/
 .cardsStyle{
-    display: flex; 
-    justify-content: space-between;
-    flex-direction: row;
-    margin: 10%;
-    max-height: 250px;
-    transform: scale(1.1);
+   
 } 
 

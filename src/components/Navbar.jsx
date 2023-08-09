@@ -1,6 +1,5 @@
 import React from 'react'
 import Anchor from './Anchors'
-import { Icon } from '@mui/material'
 import { Navbar, Nav, Button} from 'react-bootstrap';
 
 
@@ -32,7 +31,7 @@ const NavigationBar = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#about">Cities</Nav.Link>
+          <Nav.Link href="cities.jsx">Cities</Nav.Link>
           <Button>Log In</Button>
         </Nav>
       </Navbar.Collapse>

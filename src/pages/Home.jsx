@@ -1,8 +1,23 @@
-import React from 'react'
-import Hero from '../components/Hero'
+import { Children, useEffect, useState } from 'react'
 
-export default function Home() {
+import Layout from './layouts/Main'
+import Hero from './components/Hero'
+import Carousel from '../src/components/Carousel';
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  /*useEffect(()=>{
+if(scroup) setCount(pre => pre +1)
+if(scrodw) setCount(pre => pre -1)
+  },[scroup, scrodw])*/
+
   return (
-    <Hero/>
+    <>
+      <Layout>
+        {count === 0 && <Hero />}
+        <Carousel />        
+      </Layout>
+    </>
   )
 }
