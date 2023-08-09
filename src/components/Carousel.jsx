@@ -20,17 +20,13 @@ const CarouselCreator = () => {
     return () => clearTimeout(timer);
   }, [activeIndex, cardGroups]);
 
-  const handlePrev = () => {
-    setActiveIndex((prevIndex) => (prevIndex - 1 + cardGroups.length) % cardGroups.length);
-  };
-
-  const handleNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % cardGroups.length);
+  const handleSlideChange = (selectedIndex) => {
+    setActiveIndex(selectedIndex);
   };
 
   return (
     <div>
-      <Carousel activeIndex={activeIndex} onSelect={() => {}}>
+      <Carousel activeIndex={activeIndex} onSelect={handleSlideChange}>
         {cardGroups.map((cards, groupIndex) => (
           <Carousel.Item key={groupIndex}>
             <div className="d-flex justify-content-between">
@@ -46,17 +42,8 @@ const CarouselCreator = () => {
           </Carousel.Item>
         ))}
       </Carousel>
-      <div className="d-flex justify-content-center mt-3">
-        <Button variant="outline-primary" onClick={handlePrev}>
-          Anterior
-        </Button>
-        <Button variant="outline-primary" onClick={handleNext} className="ml-3">
-          Siguiente
-        </Button>
-      </div>
     </div>
   );
 };
 
 export default CarouselCreator;
-

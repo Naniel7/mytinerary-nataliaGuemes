@@ -2,7 +2,7 @@ import { Children, useEffect, useState } from 'react'
 import './App.css'
 import Layout from './layouts/Main'
 import Hero from './components/Hero'
-import Carousel from '../src/components/Carousel';
+import Carousel from '../src/components/Carousel'
 
 function App() {
   const [count, setCount] = useState(0)
