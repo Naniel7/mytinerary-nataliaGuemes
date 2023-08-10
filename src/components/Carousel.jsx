@@ -26,7 +26,7 @@ const CarouselCreator = () => {
 
   return (
     <div>
-      <Carousel activeIndex={activeIndex} onSelect={handleSlideChange}>
+      <Carousel activeIndex={activeIndex} onSelect={handleSlideChange} controls={false}>
         {cardGroups.map((cards, groupIndex) => (
           <Carousel.Item key={groupIndex}>
             <div className=" cardStyle d-flex justify-content-between">

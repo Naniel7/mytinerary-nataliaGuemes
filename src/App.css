@@ -13,6 +13,13 @@
 
 ;
 
+@media (max-width: 1024px) {
+    .hero-container {
+        min-width: fit-content;
+    }
+
+}
+
 /*Header*/
 .log-btn {
     gap: 1rem;
@@ -45,8 +52,8 @@ Nav {
     align-content: center;
     align-items: center;
     gap: 4rem;
-    margin: 3rem;
-
+    margin: 4rem;
+    padding: 3rem;
 }
 
 .hero-text {
@@ -82,12 +89,6 @@ Nav {
     margin: 1rem;
 }
 
-.call-container {
-    display: flex;
-    align-content: center;
-    align-items: center;
-}
-
 .call-btn {
     border-radius: 10px;
     border: none;
@@ -95,7 +96,7 @@ Nav {
     padding: 10px 20px;
     font-size: 1.7rem;
     color: white;
-    background: linear-gradient(to right, #2d3e6b, #ff8585);
+    background: linear-gradient(to right, #254c73, #fec098);
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
@@ -124,17 +125,9 @@ Nav {
     /*clip-path: circle(40% at center);*/
 }
 
-.carousel-control-next-icon {
-    display: none;
-}
-
-.carousel-control-prev-icon {
-    display: none;
-}
-
-.carousel-indicators button{
-background-color: #9984bb !important;
-height: 1rem !important;
+.carousel-indicators button {
+    background-color: #9984bb !important;
+    height: 1rem !important;
 }
 
 
@@ -149,5 +142,5 @@ height: 1rem !important;
 
 .footer p {
     margin: 0;
-    background-color: #f4dddd;
+    background-color: #afbbb7;
 }
