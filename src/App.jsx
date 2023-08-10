@@ -7,8 +7,8 @@ import Home from './pages/Home'
 
 function App() {
   const router = createBrowserRouter([
-    {path:"/", element: <Home />},
-    {path:"/cities", element: <Cities />},
+    { path: "/", element: <Layout><Home /></Layout> },
+    { path: "/cities", element: <Layout><Cities /></Layout> },
   ])
 
   /*useEffect(()=>{
@@ -18,9 +18,7 @@ if(scrodw) setCount(pre => pre -1)
 
   return (
     <>
-      <Layout>
-        <RouterProvider router={router} />
-      </Layout>
+      <RouterProvider router={router} />
     </>
   )
 }

@@ -6,10 +6,10 @@ import Navbar from './Navbar'
 
   
   return (
-    <div className='header'>
+   <header>
     <h2>My Tinerary</h2>
     <Navbar/>
-    </div>
+    </header>
   )
 }
 export default Header
