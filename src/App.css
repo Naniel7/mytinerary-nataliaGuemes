@@ -148,10 +148,11 @@ Nav {
 /*Footer*/
 footer {
     display: flex;
+;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background-color: #fec098;
-    padding: 1vh;
+    padding: 4vh;
 }
 
 footer b {
@@ -167,8 +168,10 @@ footer b {
     background-color: #fec098;
 }
 
+
 .links-container p {
     display: flex;
+
     padding: 0.5vh;
     margin: auto;
     background-color: #fec098;
