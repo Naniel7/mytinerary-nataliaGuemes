@@ -8,11 +8,18 @@
 
 @media (min-width: 1024px) {
     .hero-text {
-        font-size: medium !important;
+        font-size: 2.7vh !important;
     }
 }
 
-;
+@media(min-width: 375px) and (max-width: 951px){
+    .hero-img{
+display: none;
+    }
+    .call-btn{
+        font-size: 3vh !important;
+    }
+}
 
 @media (max-width: 1024px) {
     .hero-container {
@@ -36,7 +43,7 @@ header {
 
 header h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 10%px;
+    font-size: 5vh;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -72,7 +79,7 @@ Nav {
 }
 
 .hero h3 {
-    font-size: 35px;
+    font-size: 4.4vh;
 }
 
 .hero-img img {
@@ -88,6 +95,8 @@ Nav {
     height: 80vh;
     margin: 1vh;
 }
+
+
 
 .call-btn {
     border-radius: 10px;
