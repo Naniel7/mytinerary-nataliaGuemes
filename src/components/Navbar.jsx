@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import { BsFillPersonFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom'; // Importa Link desde react-router-dom
 
 const NavigationBar = () => {
   return (
@@ -8,10 +9,10 @@ const NavigationBar = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="cities.jsx">Cities</Nav.Link>
-          <Button className= "log-btn" variant="info">
-            <BsFillPersonFill className="mr-1 bg-transparent"/> Log In {<i className="bi bi-person-fill"></i>}
+          <Nav.Link href="/">Home</Nav.Link>
+          <Link to="/cities" className="nav-link">Cities</Link>
+          <Button className="log-btn" variant="info">
+            <BsFillPersonFill className="mr-1 bg-transparent" /> Log In {<i className="bi bi-person-fill"></i>}
           </Button>
         </Nav>
       </Navbar.Collapse>
