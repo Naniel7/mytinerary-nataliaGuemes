@@ -25,6 +25,9 @@ const CarouselCreator = () => {
   };
 
   return (
+    
+    <>
+    <div className='cs-text'><h4>Popular Mytineraries</h4></div>
     <div>
       <Carousel activeIndex={activeIndex} onSelect={handleSlideChange} controls={false}>
         {cardGroups.map((cards, groupIndex) => (
@@ -42,7 +45,7 @@ const CarouselCreator = () => {
           </Carousel.Item>
         ))}
       </Carousel>
-    </div>
+    </div></>
   );
 };
 

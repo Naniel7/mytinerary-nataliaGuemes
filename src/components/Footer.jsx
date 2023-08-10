@@ -7,17 +7,13 @@ export default function Footer() {
     <>
     <footer>
       <div className='links-container'>
-        <p>Links</p>
+        <p><b>Links</b></p>
         <Link to={"/"}>
           <p>Home</p>
         </Link>
         <Link to={"/cities"}>
           <p>Cities</p>
         </Link>
-      </div>
-
-      <div className='footer'>
-        <p>All rights reserved</p>
       </div>
 
       <div className='sm-container'>

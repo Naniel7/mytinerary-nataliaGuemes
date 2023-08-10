@@ -5,12 +5,12 @@
     background-color: rgb(245, 248, 255);
 }
 
+
 @media (min-width: 1024px) {
     .hero-text {
         font-size: medium !important;
     }
 }
-
 ;
 
 @media (max-width: 1024px) {
@@ -40,6 +40,7 @@ header h2 {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    text-shadow: 2px 2px 2px #888;
 }
 
 Nav {
@@ -112,7 +113,13 @@ Nav {
     margin: 1.1rem 1.1rem 7rem 1.1rem;
 
 }
+.cs-text{
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+    text-shadow: 2px 2px 4px #888;
 
+}
 .cardStyle img {
     display: flex;
     align-items: center;
@@ -131,17 +138,30 @@ Nav {
 }
 
 
-
-
 /*Footer*/
 footer {
 display: flex;
 flex-direction: row;
-justify-content: space-around;
- background-color: #afbbb7;
+justify-content:space-evenly;
+background-color: #fec098;
+padding: 1rem;
 }
 
-footer p {
+footer b{background-color: #fec098;}
 
-   
+.sm-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 2rem;
+    background-color: #fec098;
+}
+
+.links-container p{
+    display: flex;
+padding: 0.2rem;
+    margin: 0;
+    background-color: #fec098;
+
 }
