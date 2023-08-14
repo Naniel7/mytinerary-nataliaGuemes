@@ -6,27 +6,6 @@
 }
 
 
-@media (min-width: 1024px) {
-    .hero-text {
-        font-size: 2.7vh !important;
-    }
-}
-
-@media(min-width: 375px) and (max-width: 951px){
-    .hero-img{
-display: none;
-    }
-    .call-btn{
-        font-size: 3vh !important;
-    }
-}
-
-@media (max-width: 1024px) {
-    .hero-container {
-        min-width: fit-content;
-    }
-
-}
 
 /*Header*/
 .log-btn {
@@ -43,7 +22,7 @@ header {
 
 header h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 5vh;
+    font-size: 5v;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -186,4 +165,49 @@ footer b {
     background-color: #fec098;
     color: #9984bb;
     font-weight: 700;
+}
+
+/*Medias*/
+@media (min-width: 1024px) {
+    .hero-text {
+        font-size: 2.7vh !important;
+    }
+}
+
+@media(max-width: 951px){
+    .hero-img{
+display: none;
+    }
+    #root{
+        background-image: url('../public/plane.png');
+        background-size: cover;
+        background-attachment:fixed;
+        background-repeat: no-repeat;
+        background-position: center top;
+    }
+
+    *{
+        background-color: transparent;
+        color: rgb(0, 0, 0);
+        text-shadow: 2px 2px 2px #fff;
+
+    }
+    .call-btn{
+        text-shadow:none; 
+    }
+    .cardStyle{
+        display: flex;
+        flex-direction: column;  
+        align-items: center;
+    }
+    .card-img-top{
+        min-height: 200px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-container {
+        min-width: fit-content;
+    }
+
 }

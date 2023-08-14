@@ -15,7 +15,7 @@ const CarouselCreator = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % cardGroups.length);
-    }, 4000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, [activeIndex, cardGroups]);
