@@ -96,7 +96,7 @@ Nav {
 
 /*Carousel*/
 .cardStyle {
-  gap: 10px;
+    gap: 10px;
     margin: 6vh;
     padding: 1vh;
 
@@ -136,7 +136,6 @@ Nav {
 /*Footer*/
 footer {
     display: flex;
-;
     flex-direction: row;
     justify-content: space-between;
     background-color: #fec098;
@@ -174,34 +173,43 @@ footer b {
     }
 }
 
-@media(max-width: 951px){
-    .hero-img{
-display: none;
+@media(max-width: 951px) {
+    .hero-img {
+        display: none;
     }
-    #root{
+
+    #root {
         background-image: url('../public/plane.png');
         background-size: cover;
-        background-attachment:fixed;
+        background-attachment: fixed;
         background-repeat: no-repeat;
         background-position: center top;
     }
 
-    *{
+    * {
         background-color: transparent;
         color: rgb(0, 0, 0);
         text-shadow: 2px 2px 2px #fff;
 
     }
-    .call-btn{
-        text-shadow:none; 
+
+    .call-btn {
+        text-shadow: none;
     }
-    .cardStyle{
+
+    .cardStyle {
         display: flex;
-        flex-direction: column;  
+        flex-direction: column;
         align-items: center;
     }
-    .card-img-top{
+
+    .card-img-top {
         min-height: 200px !important;
+    }
+
+    
+    footer p{
+        text-shadow: none;
     }
 }
 
