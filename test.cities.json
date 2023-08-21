@@ -1,0 +1,99 @@
+[
+  {
+    "_id": {
+      "$oid": "64e14c1660190abd2044f940"
+    },
+    "place": "Château Guillard",
+    "country": "France",
+    "image": "https://i.imgur.com/HRT8sOk.jpg",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "64e14cb4172d2c72e381772d"
+    },
+    "place": "Busan",
+    "country": "South Korea",
+    "image": "https://i.imgur.com/3eoE618.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "64e14cd2172d2c72e381772f"
+    },
+    "place": "Rialto",
+    "country": "Italy",
+    "image": "https://i.imgur.com/g6Bb1ev.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "64e14cef172d2c72e3817731"
+    },
+    "place": "Katmandú",
+    "country": "Nepal",
+    "image": "https://i.imgur.com/AmEI7Ml.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "64e14d77172d2c72e3817734"
+    },
+    "place": "Hollywood",
+    "country": "USA",
+    "image": "https://i.imgur.com/y7lDFtS.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "64e14dac172d2c72e3817736"
+    },
+    "place": "Petra",
+    "country": "Jordan",
+    "image": "https://i.imgur.com/0BIf5YM.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "64e14dcc172d2c72e3817738"
+    },
+    "place": "Paris",
+    "country": "France",
+    "image": "https://i.imgur.com/jEu3lTw.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "64e14ddf172d2c72e381773a"
+    },
+    "place": "Ayutthaya",
+    "country": "Tailand",
+    "image": "https://i.imgur.com/8Me4Ffh.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "64e14dfe172d2c72e381773c"
+    },
+    "place": "Eichenwalde",
+    "country": "Germany",
+    "image": "https://i.imgur.com/BRzgE6R.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "64e14e10172d2c72e381773e"
+    },
+    "place": "Lijang",
+    "country": "China",
+    "image": "https://i.imgur.com/dOe7MbB.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "64e14e21172d2c72e3817740"
+    },
+    "place": "Colosseo",
+    "country": "Italy",
+    "image": "https://i.imgur.com/CAUVDPo.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "64e14e28172d2c72e3817742"
+    },
+    "place": "Ilios",
+    "country": "Greek",
+    "image": "https://i.imgur.com/0XonWLl.jpg"
+  }
+]

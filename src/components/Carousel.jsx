@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel, Button } from 'react-bootstrap';
 import CardCreator from './Cards';
-import data from '../data.json';
 
-const CarouselCreator = () => {
+
+const CarouselCreator = ({data}) => {
   const slideSize = 4;
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -25,27 +25,27 @@ const CarouselCreator = () => {
   };
 
   return (
-    
+
     <>
-    <div className='cs-text'><h4>Popular Mytineraries</h4></div>
-    <div>
-      <Carousel activeIndex={activeIndex} onSelect={handleSlideChange} controls={false}>
-        {cardGroups.map((cards, groupIndex) => (
-          <Carousel.Item key={groupIndex}>
-            <div className=" cardStyle d-flex justify-content-between">
-              {cards.map((card, cardIndex) => (
-                <CardCreator
-                  image={card.image}
-                  title={card.place}
-                  subtitle={card.country}
-                  key={cardIndex}
-                />
-              ))}
-            </div>
-          </Carousel.Item>
-        ))}
-      </Carousel>
-    </div></>
+      <div className='cs-text'><h4>Popular Mytineraries</h4></div>
+      <div>
+        <Carousel activeIndex={activeIndex} onSelect={handleSlideChange} controls={false}>
+          {cardGroups.map((cards, groupIndex) => (
+            <Carousel.Item key={groupIndex}>
+              <div className=" cardStyle d-flex justify-content-between">
+                {cards.map((card, cardIndex) => (
+                  <CardCreator
+                    image={card.image}
+                    place={card.place}
+                    country={card.country}
+                    key={cardIndex}
+                  />
+                ))}
+              </div>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </div></>
   );
 };
 

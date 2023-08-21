@@ -8,6 +8,9 @@
 
 
 /*Header*/
+.navbar-toggler-icon .navbar-toggler .collapsed .navbar .navbar-expand-lg .navbar-light .bg-light{
+    background-color: transparent !important;
+}
 .log-btn {
     box-shadow: 2px 2px 6px #888;
 }
@@ -217,5 +220,12 @@ footer b {
     .hero-container {
         min-width: fit-content;
     }
+
+}
+
+
+.cities-container{
+    display: flex;
+    flex-wrap: wrap;
 
 }

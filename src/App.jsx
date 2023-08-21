@@ -1,20 +1,32 @@
-import { Children, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import './App.css'
 import Layout from './layouts/Main'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Cities from './pages/Cities'
 import Home from './pages/Home'
-
+import axios from 'axios';
 function App() {
+  const [data, setData] = useState([])
   const router = createBrowserRouter([
-    { path: "/", element: <Layout><Home /></Layout> },
-    { path: "/cities", element: <Layout><Cities /></Layout> },
+    { path: "/", element: <Layout><Home data={data}/></Layout> },
+    { path: "/cities", element: <Layout><Cities data={data}/></Layout> },
   ])
 
-  /*useEffect(()=>{
-if(scroup) setCount(pre => pre +1)
-if(scrodw) setCount(pre => pre -1)
-  },[scroup, scrodw])*/
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/api/cities');
+        setData(response.data)
+      } catch (error) {
+        console.error('Error fetching data:', error)
+      }
+    };
+
+    fetchData();
+
+  }, []);
 
   return (
     <>
