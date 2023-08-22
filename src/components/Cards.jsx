@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
+import { useNavigate  } from 'react-router-dom';
 
-let CardCreator = ({ place, country, image }) => {
+const CardCreator = ({ data }) => {
+  const navigate = useNavigate()
 
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={image} />
+    <Card style={{ width: '18rem' }} onClick={() => navigate(`/cities/${data._id}`)}>
+      <Card.Img variant="top" src={data.image} />
       <Card.Body>
-        <Card.Title>{place}</Card.Title>
-        <Card.Text>{country}</Card.Text>
+        <Card.Title>{data.place}</Card.Title>
+        <Card.Text>{data.country}</Card.Text>
       </Card.Body>
     </Card>
   );

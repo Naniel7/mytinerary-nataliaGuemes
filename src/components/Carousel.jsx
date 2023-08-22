@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Carousel, Button } from 'react-bootstrap';
 import CardCreator from './Cards';
 
-
-const CarouselCreator = ({data}) => {
+const CarouselCreator = ({ data }) => {
   const slideSize = 4;
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const limitedData = data.slice(0, 12);
+
   const cardGroups = [];
-  for (let i = 0; i < data.length; i += slideSize) {
-    cardGroups.push(data.slice(i, i + slideSize));
+  for (let i = 0; i < limitedData.length; i += slideSize) {
+    cardGroups.push(limitedData.slice(i, i + slideSize));
   }
 
   useEffect(() => {
@@ -25,7 +26,6 @@ const CarouselCreator = ({data}) => {
   };
 
   return (
-
     <>
       <div className='cs-text'><h4>Popular Mytineraries</h4></div>
       <div>
@@ -34,18 +34,14 @@ const CarouselCreator = ({data}) => {
             <Carousel.Item key={groupIndex}>
               <div className=" cardStyle d-flex justify-content-between">
                 {cards.map((card, cardIndex) => (
-                  <CardCreator
-                    image={card.image}
-                    place={card.place}
-                    country={card.country}
-                    key={cardIndex}
-                  />
+                  <CardCreator data={card} key={cardIndex} />
                 ))}
               </div>
             </Carousel.Item>
           ))}
         </Carousel>
-      </div></>
+      </div>
+    </>
   );
 };
 

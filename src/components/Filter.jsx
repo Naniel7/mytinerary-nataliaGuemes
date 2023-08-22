@@ -16,13 +16,8 @@ const CityFilter = ({ cities }) => {
         onChange={e => setFilterText(e.target.value)}
         placeholder="Find your next destination..."
       />
-      {cities.filter(item => filteredCities.includes(item.place)).map(city => (
-        <CardCreator
-        image={city.image}
-        place={city.place}
-        country={city.country}
-        key={city.id} 
-        />
+      {cities.filter(item => filteredCities.includes(item.place)).map((city, index) => (
+        <CardCreator data={city} key={index} />
       ))}
     </div>
   );

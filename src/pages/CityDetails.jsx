@@ -1,14 +1,19 @@
-import React from 'react';
-import CardCreator from '../components/Cards';
-import CityFilter from '../components/Filter';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-export default function Cities({ data }) {
-  return (
-    <>
-      <h2 className='cities-title'>Cities</h2>
-      <h3 className='cities-text'>Collection of the most beautiful places and experience</h3>
+export default function CityDetails({ data }) {
+    const { id } = useParams();
+    const [city, setCity] = useState({})
+    useEffect(() => {
+        setCity(data.find(item => item._id === id))
+    }, [])
 
-      <CityFilter cities={data} />
-    </>
-  );
+    return (
+        <div>
+            <h2 className='details-title'>{city.place}</h2>
+            <h4 className='details-subtitle'>{city.country}</h4>
+            <h5 className='details-text'></h5>
+            <img src={city.image} alt="" />
+        </div>
+    );
 }

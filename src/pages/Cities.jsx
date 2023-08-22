@@ -1,5 +1,4 @@
 import React from 'react';
-import CardCreator from '../components/Cards';
 import CityFilter from '../components/Filter';
 
 export default function Cities({ data }) {

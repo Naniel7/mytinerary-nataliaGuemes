@@ -4,17 +4,15 @@ import Layout from './layouts/Main'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Cities from './pages/Cities'
 import Home from './pages/Home'
-import Detail from './pages/CityDetails'
-
-
-
+import axios from 'axios';
+import CityDetails from './pages/CityDetails';
 
 function App() {
   const [data, setData] = useState([])
   const router = createBrowserRouter([
     { path: "/", element: <Layout><Home data={data}/></Layout> },
     { path: "/cities", element: <Layout><Cities data={data}/></Layout> },
-    { path: "/cities/:id", element: <Layout><Detail data={data}/></Layout> },
+    { path: "/cities/:id", element: <Layout><CityDetails data={data}/></Layout> },
   ])
 
 
