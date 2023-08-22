@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 
-
 let CardCreator = ({ place, country, image }) => {
-
 
   return (
     <Card style={{ width: '18rem' }}>
