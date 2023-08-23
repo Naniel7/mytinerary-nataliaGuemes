@@ -10,15 +10,16 @@ const CityFilter = ({ cities }) => {
 
   return (
     <div>
-      <input
+      <input className='filter-input'
         type="text"
         value={filterText}
         onChange={e => setFilterText(e.target.value)}
         placeholder="Find your next destination..."
       />
+      <div className='filter-cards'>
       {cities.filter(item => filteredCities.includes(item.place)).map((city, index) => (
         <CardCreator data={city} key={index} />
-      ))}
+      ))}</div>
     </div>
   );
 };

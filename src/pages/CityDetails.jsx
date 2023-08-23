@@ -9,7 +9,7 @@ export default function CityDetails({ data }) {
     }, [])
 
     return (
-        <div>
+        <div className='cities-cards'>
             <h2 className='details-title'>{city.place}</h2>
             <h4 className='details-subtitle'>{city.country}</h4>
             <h5 className='details-text'></h5>
