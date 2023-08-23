@@ -10,9 +10,9 @@ import CityDetails from './pages/CityDetails';
 function App() {
   const [data, setData] = useState([])
   const router = createBrowserRouter([
-    { path: "/", element: <Layout><Home data={data}/></Layout> },
-    { path: "/cities", element: <Layout><Cities data={data}/></Layout> },
-    { path: "/cities/:id", element: <Layout><CityDetails data={data}/></Layout> },
+    { path: "/", element: <Layout><Home data={data} /></Layout> },
+    { path: "/cities", element: <Layout><Cities data={data} /></Layout> },
+    { path: "/cities/:id", element: <Layout><CityDetails data={data} /></Layout> },
   ])
 
 

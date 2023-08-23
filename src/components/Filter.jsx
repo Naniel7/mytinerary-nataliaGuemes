@@ -17,9 +17,9 @@ const CityFilter = ({ cities }) => {
         placeholder="Find your next destination..."
       />
       <div className='filter-cards'>
-      {cities.filter(item => filteredCities.includes(item.place)).map((city, index) => (
-        <CardCreator data={city} key={index} />
-      ))}</div>
+        {cities.filter(item => filteredCities.includes(item.place)).map((city, index) => (
+          <CardCreator data={city} key={index} />
+        ))}</div>
     </div>
   );
 };

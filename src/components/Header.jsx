@@ -2,13 +2,13 @@ import React from 'react'
 import Navbar from './Navbar'
 
 
- function Header() {
+function Header() {
 
-  
+
   return (
-   <header>
-    <h2>My Tinerary</h2>
-    <Navbar/>
+    <header>
+      <h2>My Tinerary</h2>
+      <Navbar />
     </header>
   )
 }
