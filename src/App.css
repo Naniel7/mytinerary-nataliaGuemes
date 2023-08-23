@@ -8,9 +8,10 @@
 
 
 /*Header*/
-.navbar-toggler-icon .navbar-toggler .collapsed .navbar .navbar-expand-lg .navbar-light .bg-light{
+.navbar-toggler-icon .navbar-toggler .collapsed .navbar .navbar-expand-lg .navbar-light .bg-light {
     background-color: transparent !important;
 }
+
 .log-btn {
     box-shadow: 2px 2px 6px #888;
 }
@@ -84,6 +85,7 @@ Nav {
     border-radius: 10px;
     border: none;
     box-shadow: 2px 2px 6px #888;
+    text-shadow: none;
     padding: 10px 20px;
     font-size: 4vh;
     color: white;
@@ -196,10 +198,6 @@ footer b {
 
     }
 
-    .call-btn {
-        text-shadow: none;
-    }
-
     .cardStyle {
         display: flex;
         flex-direction: column;
@@ -210,8 +208,8 @@ footer b {
         min-height: 200px !important;
     }
 
-    
-    footer p{
+
+    footer p {
         text-shadow: none;
     }
 }
@@ -227,27 +225,28 @@ footer b {
 .cities-title {
     display: flex;
     align-content: center;
-justify-content: center;
-padding: 1vh;
+    justify-content: center;
+    padding: 1vh;
 }
+
 .cities-text {
     display: flex;
     align-content: center;
-justify-content: center;
-padding: 1vh;
+    justify-content: center;
+    padding: 1vh;
 }
 
-.filter-input{
+.filter-input {
     display: flex;
     width: 300px;
-    align-items: center ;
+    align-items: center;
     align-content: center;
-justify-content: center;
-margin: 3%;
-background-color: rgb(203, 183, 183);
+    justify-content: center;
+    margin: 3%;
+    background-color: rgb(203, 183, 183);
 }
 
-.filter-cards{
+.filter-cards {
     display: flex;
     flex-wrap: wrap;
     gap: 3vh;
@@ -257,11 +256,57 @@ background-color: rgb(203, 183, 183);
     overflow: hidden
 }
 
-.filter-cards img{
+.filter-cards img {
     height: 100%;
     object-fit: cover;
 }
 
+/*city details*/
 
 
+.details-content {
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(13, 202, 240, 0.5);
+    align-items: center;
+    padding: 2vh;
+    width: 50vh;
+    border-radius: 50px;
+}
 
+.details-title,
+.details-subtitle,
+.details-text {
+    background: transparent;
+}
+
+.details-text a {
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px #888;
+    padding: 10px 20px;
+    font-size: 4vh;
+    text-shadow: 2px 2px 2px #888;
+    color: white;
+    background: linear-gradient(to right, #254c73, #fec098);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    margin: 1vh;
+    display: flex;
+justify-content: center;
+}
+
+/*itineraries*/
+.itineraries{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #254c73;
+}
+
+.itineraries-text{
+    font-size: 5vh;
+    border-radius: 30px;
+    padding: 1.5vh 5vh;
+    background-color: #fec098;
+}
