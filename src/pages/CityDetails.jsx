@@ -12,14 +12,13 @@ export default function CityDetails({ data }) {
     const pageStyle = {
         backgroundImage: `url(${city.image})`,
         display: 'flex',
-        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
-
+z
     };
 
     return (
