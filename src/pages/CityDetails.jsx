@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Itineraries from '../components/Itineraries';
+import { useSelector } from 'react-redux';
 
 export default function CityDetails({ data }) {
     const { id } = useParams();
+
     const [city, setCity] = useState({})
     useEffect(() => {
         setCity(data.find(item => item._id === id))
     }, [])
+    
+let citiesReducer = useSelector(store => store.citiesReducer);
+    console.log(citiesReducer);
+    
+
 
     const pageStyle = {
         backgroundImage: `url(${city.image})`,
@@ -18,7 +25,6 @@ export default function CityDetails({ data }) {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
-z
     };
 
     return (

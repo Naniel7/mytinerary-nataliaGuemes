@@ -8,4 +8,6 @@ const add_cities = createAction("add_cities", (array) => {
     };
 });
 
-export const citiesActions = { add_cities }
+const citiesActions = { add_cities };
+
+export default citiesActions;
