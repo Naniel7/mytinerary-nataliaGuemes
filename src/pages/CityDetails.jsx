@@ -10,9 +10,9 @@ export default function CityDetails({ data }) {
     useEffect(() => {
         setCity(data.find(item => item._id === id))
     }, [])
-    
-let citiesReducer = useSelector(store => store.citiesReducer);
-    console.log(citiesReducer);
+
+let citiesInStore = useSelector(store => store.citiesInStore);
+    console.log(citiesInStore);
     
 
 
