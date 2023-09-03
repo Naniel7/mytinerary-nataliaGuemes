@@ -4,30 +4,30 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import citiesActions from '../stores/actions/citiesAction';
 import itinerariesActions from '../stores/actions/itinerariesActions';
-//import itienerary
 
 export default function CityDetails({ data }) {
     const { id } = useParams();
     const dispatch = useDispatch();
 
     const [city, setCity] = useState(null);
+    const [itineraries, setItineraries] = useState([]); // Estado para almacenar los itinerarios
 
     useEffect(() => {
         const selectedCity = data.find(item => item._id === id);
         setCity(selectedCity);
 
-        axios.get("http://localhost:3000/api/cities/")
+        axios.get(`http://localhost:3000/api/cities/${id}/itineraries`) // Supongo que puedes obtener los itinerarios relacionados mediante una API
             .then((response) => {
                 dispatch(citiesActions.add_cities(response.data));
+                setItineraries(response.data.itineraries); // Establecer los itinerarios en el estado
             })
             .catch((error) => {
                 console.error("Error to get API data:", error);
             });
         
         const itinerariesData = [];
-        dispatch(itinerariesActions.addItineraries(itinerariesData));
+        dispatch(itinerariesActions.add_itineraries(itinerariesData));
     }, [data, id, dispatch]);
-
 
     const pageStyle = {
         backgroundImage: city ? `url(${city.image})` : '',
@@ -56,7 +56,22 @@ export default function CityDetails({ data }) {
                     )}
                 </div>
             </div>
-            {/* <Itineraries /> */}
+
+            <div className="itineraries-container">
+                <h2>Itineraries</h2>
+                <ul>
+                    {itineraries.map((itineraries) => (
+                        <li key={itineraries._id}>
+                            <h3>{itineraries.authorName}</h3>
+                            <p>Price: {itineraries.price} billetitos</p>
+                            <p>Duration: {itineraries.duration} horas</p>
+                            <p>Likes: {itineraries.likes}</p>
+                            <p>Hashtags: {itineraries.hashtags.join(', ')}</p>
+                            <button>View More</button>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </>
     );
 }

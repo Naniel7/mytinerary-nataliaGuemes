@@ -1,13 +1,13 @@
 import { createAction } from "@reduxjs/toolkit";
 
-const addItineraries = createAction("addItineraries", (array) => {
+const add_itineraries = createAction("add_itineraries", (array) => {
     return {
         payload: {
-            cities: array
+            itineraries: array
         }
     };
 });
 
-const itinerariesActions = { addItineraries };
+const itinerariesActions = { add_itineraries };
 
 export default itinerariesActions;
