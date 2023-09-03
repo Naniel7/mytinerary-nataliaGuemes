@@ -60,19 +60,28 @@ export default function CityDetails({ data }) {
 
             <div className="itineraries-container">
                 <h2>Itineraries</h2>
-                <ul>
-                    {itineraries.map((itinerary) => (
-                        <li key={itinerary._id}>
-                            <p>User: {itinerary.authorName}</p>
-                            <img src= {itinerary.authorPhoto} alt="authorPhoto" />
-                            <p>Price: {itinerary.price} billetitos</p>
-                            <p>Duration: {itinerary.duration} hours</p>
+
+                {itineraries.map((itinerary) => (
+                    <div className='Itinerary' key={itinerary._id}>
+                        <p className='itinerary-name'>{itinerary.name}</p>
+                        <div className='itinerary-block>'>
                             <p>Likes: {itinerary.likes}</p>
-                            <p>Hashtags: {itinerary.hashtags.join(', ')}</p>
-                            <button>View More</button>
-                        </li>
-                    ))}
-                </ul>
+
+                            <div className='itinerary-info'>
+                                <div className='itinerary-user'><p>User: {itinerary.authorName}</p>
+                                    <img src={itinerary.authorPhoto} alt="authorPhoto" />
+                                </div>
+                                <div className='itinerary-hashtag'><p>Hashtags: {itinerary.hashtags.join(', ')}</p></div>
+                                <div><p>Duration: {itinerary.duration} hours</p></div>
+                                <div><p>Price: {itinerary.price} billetitos</p></div>
+                            </div>
+                            <div className='itinerary-button'>
+                                <button>View More</button>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+
             </div>
         </>
     );
