@@ -6,6 +6,7 @@ import Cities from './pages/Cities'
 import Home from './pages/Home'
 import axios from 'axios';
 import CityDetails from './pages/CityDetails';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [data, setData] = useState([])

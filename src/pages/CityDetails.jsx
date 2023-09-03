@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import citiesActions from '../stores/actions/citiesAction';
 import itinerariesActions from '../stores/actions/itinerariesActions';
+import PriceIcon from '../components/PriceIcon';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import Accordion from 'react-bootstrap/Accordion';
 
 export default function CityDetails({ data }) {
     const { id } = useParams();
@@ -41,6 +44,8 @@ export default function CityDetails({ data }) {
         minHeight: '100vh',
     };
 
+    
+
     return (
         <>
             <div className='cities-details' style={pageStyle}>
@@ -68,15 +73,31 @@ export default function CityDetails({ data }) {
                             <p>Likes: {itinerary.likes}</p>
 
                             <div className='itinerary-info'>
-                                <div className='itinerary-user'><p>User: {itinerary.authorName}</p>
+                                <div className='itinerary-user'>
+                                    <p><div>User:</div> {itinerary.authorName}</p>
                                     <img src={itinerary.authorPhoto} alt="authorPhoto" />
                                 </div>
-                                <div className='itinerary-hashtag'><p>Hashtags: {itinerary.hashtags.join(', ')}</p></div>
-                                <div><p>Duration: {itinerary.duration} hours</p></div>
-                                <div><p>Price: {itinerary.price} billetitos</p></div>
+                                <div className='itinerary-hashtag'>
+                                    <p><div>Hashtags: </div>
+                                        {itinerary.hashtags.join(', ')}</p>
+                                </div>
+                                <div>
+                                    <p><div>Duration:</div> {itinerary.duration} hours</p>
+                                </div>
+                                <div>
+                                    <p><div>Price:</div> <PriceIcon price={itinerary.price} /></p>
+                             
+                                </div>
                             </div>
                             <div className='itinerary-button'>
-                                <button>View More</button>
+                                <Accordion>
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>View More</Accordion.Header>
+        <Accordion.Body>
+          UNDER CONSTRUCTION
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
                             </div>
                         </div>
                     </div>

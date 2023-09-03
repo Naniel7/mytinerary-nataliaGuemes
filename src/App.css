@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0;
@@ -346,8 +348,9 @@ footer p {
 .itinerary-info {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-around;
+    align-items: start;
+
 }
 
 .itinerary-user {
