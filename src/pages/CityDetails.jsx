@@ -10,21 +10,22 @@ export default function CityDetails({ data }) {
     const dispatch = useDispatch();
 
     const [city, setCity] = useState(null);
-    const [itineraries, setItineraries] = useState([]); // Estado para almacenar los itinerarios
+    const [itineraries, setItineraries] = useState([]);
 
     useEffect(() => {
         const selectedCity = data.find(item => item._id === id);
         setCity(selectedCity);
 
-        axios.get(`http://localhost:3000/api/cities/${id}/itineraries`) // Supongo que puedes obtener los itinerarios relacionados mediante una API
+        axios.get(`http://localhost:3000/api/itineraries/${id}`)
             .then((response) => {
+                console.log(response);
                 dispatch(citiesActions.add_cities(response.data));
-                setItineraries(response.data.itineraries); // Establecer los itinerarios en el estado
+                setItineraries(response.data);
             })
             .catch((error) => {
                 console.error("Error to get API data:", error);
             });
-        
+
         const itinerariesData = [];
         dispatch(itinerariesActions.add_itineraries(itinerariesData));
     }, [data, id, dispatch]);
@@ -44,7 +45,7 @@ export default function CityDetails({ data }) {
         <>
             <div className='cities-details' style={pageStyle}>
                 <div className='details-content'>
-                    {city && ( 
+                    {city && (
                         <>
                             <h2 className='details-title'>{city.place}</h2>
                             <h4 className='details-subtitle'>{city.country}</h4>
@@ -60,13 +61,14 @@ export default function CityDetails({ data }) {
             <div className="itineraries-container">
                 <h2>Itineraries</h2>
                 <ul>
-                    {itineraries.map((itineraries) => (
-                        <li key={itineraries._id}>
-                            <h3>{itineraries.authorName}</h3>
-                            <p>Price: {itineraries.price} billetitos</p>
-                            <p>Duration: {itineraries.duration} horas</p>
-                            <p>Likes: {itineraries.likes}</p>
-                            <p>Hashtags: {itineraries.hashtags.join(', ')}</p>
+                    {itineraries.map((itinerary) => (
+                        <li key={itinerary._id}>
+                            <p>User: {itinerary.authorName}</p>
+                            <img src= {itinerary.authorPhoto} alt="authorPhoto" />
+                            <p>Price: {itinerary.price} billetitos</p>
+                            <p>Duration: {itinerary.duration} hours</p>
+                            <p>Likes: {itinerary.likes}</p>
+                            <p>Hashtags: {itinerary.hashtags.join(', ')}</p>
                             <button>View More</button>
                         </li>
                     ))}
