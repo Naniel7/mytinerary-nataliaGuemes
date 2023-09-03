@@ -44,7 +44,7 @@ export default function CityDetails({ data }) {
         minHeight: '100vh',
     };
 
-    
+
 
     return (
         <>
@@ -81,23 +81,23 @@ export default function CityDetails({ data }) {
                                     <p><div>Hashtags: </div>
                                         {itinerary.hashtags.join(', ')}</p>
                                 </div>
-                                <div>
+                                <div className='itinerary-duration'>
                                     <p><div>Duration:</div> {itinerary.duration} hours</p>
                                 </div>
-                                <div>
+                                <div className='itinerary-price'>
                                     <p><div>Price:</div> <PriceIcon price={itinerary.price} /></p>
-                             
+
                                 </div>
                             </div>
                             <div className='itinerary-button'>
                                 <Accordion>
-      <Accordion.Item eventKey="0">
-        <Accordion.Header>View More</Accordion.Header>
-        <Accordion.Body>
-          UNDER CONSTRUCTION
-        </Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
+                                    <Accordion.Item eventKey="0">
+                                        <Accordion.Header>View More</Accordion.Header>
+                                        <Accordion.Body>
+                                            UNDER CONSTRUCTION
+                                        </Accordion.Body>
+                                    </Accordion.Item>
+                                </Accordion>
                             </div>
                         </div>
                     </div>
