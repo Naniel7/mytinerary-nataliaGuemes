@@ -322,12 +322,14 @@ footer b {
 @media(max-width: 767px) {
     .cardStyle {
         flex-direction: column;
+       align-items: center;
+       gap: 3vh;
     }
     .cardStyle .card {
-        width: 100%;
+        width: 100%; 
     }
     .cardStyle img {
-        height: 250px;
+        height: 20vh; 
     }
 
 }
@@ -360,7 +362,7 @@ footer b {
     align-items: center;
     align-content: center;
     justify-content: center;
-    font-size: 2vw;
+    font-size: 4vh;
     color: #254c73;
     background-color: #fff;
 }
