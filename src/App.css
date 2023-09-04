@@ -1,5 +1,3 @@
-
-
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +5,9 @@
     background-color: rgb(245, 248, 255);
 }
 
-
+.d-flex {
+    display: flex;
+}
 
 /*Header*/
 .log-btn {
@@ -107,7 +107,6 @@ Nav {
     gap: 10px;
     margin: 6vh;
     padding: 1vh;
-
 }
 
 .cs-text {
@@ -115,7 +114,6 @@ Nav {
     justify-content: center;
     margin: 2%;
     text-shadow: 2px 2px 4px #888;
-
 }
 
 .cardStyle img {
@@ -128,6 +126,10 @@ Nav {
     overflow: hidden;
     box-shadow: 2px 2px 6px #888;
     /*clip-path: circle(40% at center);*/
+}
+
+.cardStyle .card {
+    width: 18rem;
 }
 
 
@@ -271,6 +273,7 @@ footer b {
     }
 }
 
+
 @media(max-width: 991px) {
     .hero-img {
         display: none;
@@ -284,35 +287,48 @@ footer b {
         background-position: center 9vh;
     }
 
-* {
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-    text-shadow: 2px 2px 2px #fff;
+    * {
+        background-color: transparent;
+        color: rgb(0, 0, 0);
+        text-shadow: 2px 2px 2px #fff;
 
+    }
+
+    .card {
+        min-width: 25vw;
+    }
+
+    .card-img-top {
+        height: auto;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        align-self: auto;
+    }
+
+    .itinerary {
+        background-color: rgb(245, 248, 255);
+    }
+
+    footer p {
+        text-shadow: none;
+    }
 }
 
-.cardStyle {
-    flex-wrap: wrap;
 
-}
-
-.card-img-top {
-    min-height: 200px !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    align-self: auto;
-}
-
-.itinerary {
-    background-color: rgb(245, 248, 255);
-}
-
-footer p {
-    text-shadow: none;
-}
-
+@media(max-width: 767px) {
+    .cardStyle {
+        flex-direction: column;
+    }
+    .cardStyle .card {
+        width: 100%;
+    }
+    .cardStyle img {
+        height: 250px;
+    }
 
 }
 
@@ -335,8 +351,9 @@ footer p {
     border-radius: 6px;
     color: #9984bb;
     padding: 0.7%;
-    background-color: rgb(245, 248, 255);
+    background-color: #fff;
 }
+
 
 .itinerary-name {
     display: flex;
@@ -345,6 +362,7 @@ footer p {
     justify-content: center;
     font-size: 2vw;
     color: #254c73;
+    background-color: #fff;
 }
 
 .itinerary-info {
@@ -352,7 +370,16 @@ footer p {
     flex-direction: row;
     justify-content: space-around;
     align-items: start;
-height: 25vh;
+    height: 25vh;
+    background-color: #fff;
+}
+
+.itinerary-block {
+    background-color: #fff;
+}
+
+.itinerary-block p {
+    background-color: #fff;
 }
 
 .itinerary-user {
@@ -361,33 +388,50 @@ height: 25vh;
     justify-content: center;
     align-items: center;
     width: 25%;
-
+    background-color: #fff;
 }
 
 .itinerary-user img {
     border-radius: 100%;
     max-width: 10vh;
+    background-color: #fff;
 }
 
-.itinerary-hashtag{
-    width: 25%;
-    display: flex;
-justify-content: center;
-}
-.itinerary-duration{
+.itinerary-hashtag {
     width: 25%;
     display: flex;
     justify-content: center;
+    background-color: #fff;
 }
-.itinerary-price{
+
+.itinerary-duration {
     width: 25%;
     display: flex;
     justify-content: center;
+    background-color: #fff;
 }
 
-.accordion-button{
+.itinerary-price {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
+
+
+.div-title {
+    background-color: #fff;
+}
+
+
+.accordeon-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    background-color: #fff;
+    margin: 0;
+}
+
+.accordeon-body {
+    background-color: #fff;
 }

@@ -8,18 +8,20 @@ export default function Footer() {
       <footer>
         <div className='links-container'>
           <p><b>Links</b></p>
-          <Link to={"/"}>
-            <p>Home</p>
-          </Link>
-          <Link to={"/cities"}>
-            <p>Cities</p>
-          </Link>
+          <div className='d-flex'>
+            <Link to={"/"}>
+              <p>Home</p>
+            </Link>
+            <Link to={"/cities"}>
+              <p>Cities</p>
+            </Link>
+          </div>
         </div>
 
         <div className='sm-container'>
-          <BsInstagram className="mr-1 bg-transparent" />{<i className="bi bi-instagram"></i>}
-          <BsFacebook className="mr-1 bg-transparent" />{<i className="bi bi-facebook"></i>}
-          <BsWhatsapp className="mr-1 bg-transparent" />{<i className="bi bi-whatsapp"></i>}
+          <BsInstagram className="mr-1 bg-transparent" />
+          <BsFacebook className="mr-1 bg-transparent" />
+          <BsWhatsapp className="mr-1 bg-transparent" />
         </div>
 
       </footer>

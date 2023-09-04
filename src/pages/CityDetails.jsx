@@ -5,8 +5,8 @@ import axios from 'axios';
 import citiesActions from '../stores/actions/citiesAction';
 import itinerariesActions from '../stores/actions/itinerariesActions';
 import PriceIcon from '../components/PriceIcon';
-import 'bootstrap-icons/font/bootstrap-icons.css';
 import Accordion from 'react-bootstrap/Accordion';
+import { BsTools } from 'react-icons/bs';
 
 export default function CityDetails({ data }) {
     const { id } = useParams();
@@ -69,23 +69,23 @@ export default function CityDetails({ data }) {
                 {itineraries.map((itinerary) => (
                     <div className='Itinerary' key={itinerary._id}>
                         <p className='itinerary-name'>{itinerary.name}</p>
-                        <div className='itinerary-block>'>
+                        <div className='itinerary-block'>
                             <p>Likes: {itinerary.likes}</p>
 
                             <div className='itinerary-info'>
                                 <div className='itinerary-user'>
-                                    <p><div>User:</div> {itinerary.authorName}</p>
+                                    <p><div className='div-title'>User:</div> {itinerary.authorName}</p>
                                     <img src={itinerary.authorPhoto} alt="authorPhoto" />
                                 </div>
                                 <div className='itinerary-hashtag'>
-                                    <p><div>Hashtags: </div>
+                                    <p><div className='div-title'>Hashtags: </div>
                                         {itinerary.hashtags.join(', ')}</p>
                                 </div>
                                 <div className='itinerary-duration'>
-                                    <p><div>Duration:</div> {itinerary.duration} hours</p>
+                                    <p><div className='div-title'>Duration:</div> {itinerary.duration} hours</p>
                                 </div>
                                 <div className='itinerary-price'>
-                                    <p><div>Price:</div> <PriceIcon price={itinerary.price} /></p>
+                                    <p><div className='div-title'>Price:</div> <PriceIcon price={itinerary.price} /></p>
 
                                 </div>
                             </div>
@@ -94,7 +94,9 @@ export default function CityDetails({ data }) {
                                     <Accordion.Item eventKey="0">
                                         <Accordion.Header>View More</Accordion.Header>
                                         <Accordion.Body>
-                                            UNDER CONSTRUCTION
+                                            <div className='accordeon-content'>  <BsTools />
+                                        <p>UNDER CONSTRUCTION</p></div>
+                                      
                                         </Accordion.Body>
                                     </Accordion.Item>
                                 </Accordion>

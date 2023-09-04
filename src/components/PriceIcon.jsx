@@ -1,10 +1,9 @@
 import React from 'react';
+import { BsCash } from 'react-icons/bs';
 
 const PriceIcon = ({ price }) => {
-  const iconClass = 'bi bi-cash'
-
   const iconElements = Array.from({ length: price }, (_, index) => (
-    <i key={index} className={iconClass}></i>
+    <BsCash key={index} /> 
   ));
 
   return <>{iconElements}</>;
