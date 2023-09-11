@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import axios from 'axios';
 import CityDetails from './pages/CityDetails';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SignUpPage from './pages/LogIn'; 
 
 function App() {
   const [data, setData] = useState([])
@@ -14,11 +15,10 @@ function App() {
     { path: "/", element: <Layout><Home data={data} /></Layout> },
     { path: "/cities", element: <Layout><Cities data={data} /></Layout> },
     { path: "/cities/:id", element: <Layout><CityDetails data={data} /></Layout> },
+    { path: "/login", element: <Layout><SignUpPage /></Layout> } 
   ])
 
-
   useEffect(() => {
-
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:3000/api/cities');
@@ -29,7 +29,6 @@ function App() {
     };
 
     fetchData();
-
   }, []);
 
   return (

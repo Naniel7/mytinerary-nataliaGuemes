@@ -12,7 +12,9 @@ const NavigationBar = () => {
           <Nav.Link href="/">Home</Nav.Link>
           <Link to="/cities" className="nav-link">Cities</Link>
           <Button className="log-btn" variant="info">
-            <BsFillPersonFill className="mr-1 bg-transparent" /> Log In {<i className="bi bi-person-fill"></i>}
+            <Link to="/login" className="nav-link">
+              <BsFillPersonFill className="mr-1 bg-transparent" /> Log In <i className="bi bi-person-fill"></i>
+            </Link>
           </Button>
         </Nav>
       </Navbar.Collapse>
