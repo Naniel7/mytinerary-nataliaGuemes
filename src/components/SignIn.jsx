@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -77,7 +78,7 @@ const SignIn = ({ onSignIn }) => {
             Sign In with Google
           </button>
           <p className="mt-3">
-            Do you have an account? <Link to="/login">Sign In</Link>
+            Don't you have an account? <Link to="/register">Sign Up</Link>
           </p>
         </div>
       </form>

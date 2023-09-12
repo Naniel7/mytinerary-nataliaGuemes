@@ -7,6 +7,6 @@ export const store= configureStore({
 reducer:{
   citiesReducer: citiesReducer,
   itinerariesReducer: itinerariesReducer,
-  userReducer:userReducer,
+  userReducer: userReducer,
 }
 })

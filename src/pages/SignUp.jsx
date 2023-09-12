@@ -6,21 +6,17 @@ import SignUp from "../components/SignUp";
 const LogUpForm = () => {
   const dispatch = useDispatch();
 
-  const handleSignIn = async (email, password) => {
+  const handleSignUp = async (formData) => {
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/user/register",
-        {
-          email,
-          password,
-        }
+      const response = await axios.post("http://localhost:3000/api/user/register",
+        formData
       );
-
+  
       if (response.status === 200) {
-        //CERRAR SIGN UP
-        console.log("Log in succefully");
+        // Cerrar el formulario de registro
+        console.log("Sign up successfully");
       } else {
-        console.error("Error login");
+        console.error("Error signing up");
       }
     } catch (error) {
       console.error("Network error:", error);
@@ -30,7 +26,7 @@ const LogUpForm = () => {
   return (
     <div className="container">
       <div className="formContainer">
-        <SignUp onSignUp={handleSignIn} />
+        <SignUp onSignUp={handleSignUp} />
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -35,7 +36,7 @@ const SignUp = ({ onSignUp }) => {
         // CERRAR FORMULARIO
         onSignUp(formData.email, formData.password);
       } else {
-        console.error("Error saving data");
+        console.error("Error saving data here");
       }
     } catch (error) {
       console.error("Netword error ", error);

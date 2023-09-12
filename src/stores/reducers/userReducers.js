@@ -1,17 +1,22 @@
+import { createReducer } from "@reduxjs/toolkit";
+import userActions from "../actions/userActions"; 
+
 const initialState = {
-    user: null,
-  };
-  
-  const userReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case 'SIGN_IN':
-        return {
-          ...state,
-          user: action.payload,
-        };
-      default:
-        return state;
-    }
-  };
-  
-  export default userReducer;
+  user: null,
+  error: null,
+};
+
+const userReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase(userActions.registerUser, (state, action) => {
+      state.user = action.payload.formData;
+      state.error = null; 
+    })
+    .addCase(userActions.loginUser, (state, action) => {
+     
+      state.user = action.payload.formData;
+      state.error = null; 
+    });
+});
+
+export default userReducer;

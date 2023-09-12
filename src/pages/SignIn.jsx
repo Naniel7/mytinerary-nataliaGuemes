@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import SignIn from '../components/SignIn';
+import axios from 'axios';
+import userActions from '../stores/actions/userActions';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -13,9 +15,10 @@ const LoginForm = () => {
       });
 
       if (response.status === 200) {
-        // CERRAR FORM 
-        console.log("Succefully log in");
+        dispatch(userActions.loginUser({ email, password }));
+        console.log("successfully log in");
       } else {
+        dispatch(userActions.loginError());
         console.error("Error logging in");
       }
     } catch (error) {
