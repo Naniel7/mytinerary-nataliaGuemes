@@ -35,10 +35,10 @@ const SignUp = ({ onSignUp }) => {
         // CERRAR FORMULARIO
         onSignUp(formData.email, formData.password);
       } else {
-        console.error("Error al guardar los datos");
+        console.error("Error saving data");
       }
     } catch (error) {
-      console.error("Error de red:", error);
+      console.error("Netword error ", error);
     }
   };
 

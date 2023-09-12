@@ -13,13 +13,13 @@ const LoginForm = () => {
       });
 
       if (response.status === 200) {
-        // Cerrar el formulario de inicio de sesión aquí
-        console.log("Log in exitoso");
+        // CERRAR FORM 
+        console.log("Succefully log in");
       } else {
-        console.error("Error al iniciar sesión");
+        console.error("Error logging in");
       }
     } catch (error) {
-      console.error("Error de red:", error);
+      console.error("Network error", error);
     }
   };
 

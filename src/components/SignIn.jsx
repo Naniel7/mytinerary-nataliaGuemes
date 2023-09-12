@@ -31,10 +31,10 @@ const SignIn = ({ onSignIn }) => {
         // Cerrar el formulario de inicio de sesión aquí
         onSignIn(formData.email, formData.password);
       } else {
-        console.error("Error al iniciar sesión");
+        console.error("Error logging in");
       }
     } catch (error) {
-      console.error("Error de red:", error);
+      console.error("Network error", error);
     }
   };
 
