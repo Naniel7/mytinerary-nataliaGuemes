@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const SignUp = () => {
+const SignUp = ({ onSignUp }) => {
   const [formData, setFormData] = useState({
     name: "",
     lastName: "",
@@ -32,11 +32,13 @@ const SignUp = () => {
       });
 
       if (response.ok) {
+        // CERRAR FORMULARIO
+        onSignUp(formData.email, formData.password);
       } else {
-        console.error("Error saving data");
+        console.error("Error al guardar los datos");
       }
     } catch (error) {
-      console.error("Network error:", error);
+      console.error("Error de red:", error);
     }
   };
 
@@ -47,7 +49,7 @@ const SignUp = () => {
   return (
     <div className="container mt-5">
       <h2>Sign Up</h2>
-      <form >
+      <form>
         <div className="mb-3">
           <input
             type="text"
@@ -132,18 +134,18 @@ const SignUp = () => {
             <option value="United States">United States</option>
           </select>
         </div>
+        <div className="signup-button">
+          <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
+            Sign Up
+          </button>
+          <button onClick={handleGoogleSignUp} className="btn btn-danger mt-3">
+            Sign Up with Google
+          </button>
+          <p className="mt-3">
+            Do you have an account? <Link to="/login">Sign In</Link>
+          </p>
+        </div>
       </form>
-      <div className="signup-button">
-        <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
-          Sign Up
-        </button>
-        <button onClick={handleGoogleSignUp} className="btn btn-danger mt-3">
-          Sign Up with Google
-        </button>
-        <p className="mt-3">
-          Do you have an account? <Link to="/login">Sign In</Link>
-        </p>
-      </div>
     </div>
   );
 };
