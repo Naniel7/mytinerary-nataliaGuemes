@@ -1,4 +1,5 @@
 import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const registerUser = createAction("registerUser", (formData) => {
   return {
@@ -35,5 +36,5 @@ const authenticate = createAsyncThunk("authenticate", async () => {
   }
 });
 
-const userActions = { registerUser, loginUser };
-export default{ userActions, authenticate };
+const userActions = { registerUser, loginUser, authenticate };
+export default userActions;
