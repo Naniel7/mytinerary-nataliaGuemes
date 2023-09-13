@@ -24,15 +24,11 @@ const SignUp = ({ onSignUp }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/api/user/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post("http://localhost:3000/api/user/register",
+        formData
+      );
 
-      if (response.ok) {
+      if (response.status === 200) {
         // CERRAR FORMULARIO
         onSignUp(formData.email, formData.password);
       } else {

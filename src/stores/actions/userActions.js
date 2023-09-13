@@ -19,18 +19,23 @@ const loginUser = createAction("loginUser", (formData) => {
 
 const authenticate = createAsyncThunk("authenticate", async () => {
   try {
+    console.log("test");
     let token = localStorage.getItem("token");
-    let user = await axios.post("http://localhost:3000/api/user/authenticated", null, {
-      headers: {
-        'Authorization': 'Bearer ' + token
+    let user = await axios.post(
+      "http://localhost:3000/api/user/authenticated",
+      null,
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
       }
-    })
-    .then((response) => {
-      console.log("Authenticated successfully");
-      localStorage.setItem("token", response.data.token);
-      return response.data.user;
-    });
-    console.log(user);
+    );
+    console.log("Authenticated successfully");
+    localStorage.setItem("token", response.data.token);
+
+    return {
+      user: user,
+    };
   } catch (error) {
     console.error(error.message);
   }

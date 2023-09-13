@@ -1,25 +1,25 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import SignIn from '../components/SignIn';
-import axios from 'axios';
-import userActions from '../stores/actions/userActions';
+import React from "react";
+import { useDispatch } from "react-redux";
+import SignIn from "../components/SignIn";
+import axios from "axios";
+import userActions from "../stores/actions/userActions";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
 
   const handleSignIn = async (email, password) => {
     try {
-      const response = await axios.post("http://localhost:3000/api/user/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:3000/api/user/login",
+        {
+          email,
+          password,
+        }
+      );
 
       if (response.status === 200) {
         dispatch(userActions.loginUser({ email, password }));
-        localStorage.setItem("token", response.data.token)
-        
-        let token =localStorage.getItem("token");
-        console.log(token);
+        localStorage.setItem("token", response.data.token);
 
       } else {
         dispatch(userActions.loginError());
