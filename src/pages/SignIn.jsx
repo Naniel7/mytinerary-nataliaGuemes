@@ -16,7 +16,11 @@ const LoginForm = () => {
 
       if (response.status === 200) {
         dispatch(userActions.loginUser({ email, password }));
-        console.log("successfully log in");
+        localStorage.setItem("token", response.data.token)
+        
+        let token =localStorage.getItem("token");
+        console.log(token);
+
       } else {
         dispatch(userActions.loginError());
         console.error("Error logging in");

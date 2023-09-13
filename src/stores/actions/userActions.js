@@ -1,4 +1,4 @@
-import { createAction } from "@reduxjs/toolkit";
+import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 
 const registerUser = createAction("registerUser", (formData) => {
   return {
@@ -8,7 +8,6 @@ const registerUser = createAction("registerUser", (formData) => {
   };
 });
 
-
 const loginUser = createAction("loginUser", (formData) => {
   return {
     payload: {
@@ -17,6 +16,24 @@ const loginUser = createAction("loginUser", (formData) => {
   };
 });
 
-const userActions = { registerUser, loginUser };
+const authenticate = createAsyncThunk("authenticate", async () => {
+  try {
+    let token = localStorage.getItem("token");
+    let user = await axios.post("http://localhost:3000/api/user/authenticated", null, {
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    })
+    .then((response) => {
+      console.log("Authenticated successfully");
+      localStorage.setItem("token", response.data.token);
+      return response.data.user;
+    });
+    console.log(user);
+  } catch (error) {
+    console.error(error.message);
+  }
+});
 
-export default userActions;
+const userActions = { registerUser, loginUser };
+export default{ userActions, authenticate };
