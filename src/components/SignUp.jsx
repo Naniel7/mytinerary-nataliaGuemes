@@ -7,7 +7,7 @@ import jwt_decode from "jwt-decode";
 const SignUp = ({ onSignUp }) => {
   const [formData, setFormData] = useState({
     name: "",
-    lastName: "",
+    lastname: "",
     email: "",
     password: "",
     imageURL: "",
@@ -26,7 +26,6 @@ const SignUp = ({ onSignUp }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await axios.post(
         "http://localhost:3000/api/user/register",
@@ -79,9 +78,9 @@ const SignUp = ({ onSignUp }) => {
           <input
             type="text"
             className="form-control"
-            name="lastName"
+            name="lastname"
             placeholder="Last Name"
-            value={formData.lastName}
+            value={formData.lastname}
             onChange={handleChange}
             required
           />

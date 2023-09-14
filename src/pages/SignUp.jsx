@@ -25,8 +25,6 @@ const LogUpForm = () => {
     }
   };
 
-  
-
   return (
     <div className="container">
       <div className="formContainer">
