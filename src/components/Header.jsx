@@ -1,13 +1,12 @@
 import React from 'react'
 import Navbar from './Navbar'
 
-function Header() {
-
+function Header({login}) {
 
   return (
     <header>
       <h2>My Tinerary</h2>
-      <Navbar />
+      <Navbar login={login}/>
     </header>
   )
 }

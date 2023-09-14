@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 
@@ -14,8 +14,6 @@ const SignUp = ({ onSignUp }) => {
     country: "",
   });
 
-  const navigate = useNavigate();
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -24,8 +22,7 @@ const SignUp = ({ onSignUp }) => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (formData) => {
     try {
       const response = await axios.post(
         "http://localhost:3000/api/user/register",
@@ -34,7 +31,7 @@ const SignUp = ({ onSignUp }) => {
 
       if (response.status === 200) {
         onSignUp(formData.email, formData.password);
-        navigate('/', { replace: true });
+
       } else {
         console.error("Error saving data here");
       }
@@ -44,20 +41,19 @@ const SignUp = ({ onSignUp }) => {
   };
 
   const signUpWithGoogle = (credentialResponse) => {
+    console.log(credentialResponse);
     const dataUser = jwt_decode(credentialResponse.credential);
-    console.log(dataUser);
-    
-  const handleGoogleSignUp = {
-    name: dataUser.given_name,
-    lastName: dataUser.family_name,
-    email: dataUser.email,
-    password: dataUser.email+dataUser.sub,
-    imageURL: dataUser.picture,
-  };
 
-  console.log(handleGoogleSignUp);
+    const handleGoogleSignUp = {
+      name: dataUser.given_name,
+      lastname: dataUser.family_name,
+      email: dataUser.email,
+      password: dataUser.sub,
+      imageURL: dataUser.picture,
+      country: "ARG",
+    };
+    handleSubmit(handleGoogleSignUp);
   };
-
 
   return (
     <div className="container mt-5">
@@ -146,17 +142,18 @@ const SignUp = ({ onSignUp }) => {
             <option value="United States">United States</option>
           </select>
         </div>
+      </form>
         <div className="signup-button">
           <button
             type="submit"
             className="btn btn-primary"
-            onClick={handleSubmit}
+            onClick={() => handleSubmit(formData)}
           >
             Sign Up
           </button>
 
           <GoogleLogin
-          text="signup_with"
+            text="signup_with"
             onSuccess={signUpWithGoogle}
             onError={() => {
               console.log("LogUp Failed");
@@ -167,7 +164,6 @@ const SignUp = ({ onSignUp }) => {
             Do you have an account? <Link to="/login">Sign In</Link>
           </p>
         </div>
-      </form>
     </div>
   );
 };

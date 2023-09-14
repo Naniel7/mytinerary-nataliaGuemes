@@ -6,7 +6,7 @@ import { GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from 'react-router-dom';
 
-const SignIn = ({ onSignIn }) => {
+const SignIn = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -21,20 +21,15 @@ const SignIn = ({ onSignIn }) => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async (formData) => {
     try {
-      const response = await fetch("http://localhost:3000/api/user/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post(
+        "http://localhost:3000/api/user/login",
+        formData
+      );
 
-      if (response.ok) {
-        onSignIn(formData.email, formData.password);
+      if (response.status === 200) {
+        localStorage.setItem("token", response.data.token);
         navigate('/', { replace: true });
       } else {
         console.error("Error logging in");
@@ -46,15 +41,13 @@ const SignIn = ({ onSignIn }) => {
 
   const signInWithGoogle = (credentialResponse) => {
     const userData = jwt_decode(credentialResponse.credential);
-    console.log(userData);
-    
+  
     const handleGoogleSignIn = {
       email: userData.email,
-      password: userData.email + userData.sub,
+      password: userData.sub,
     };
-  
-    console.log(handleGoogleSignIn);
-    navigate('/', { replace: true });
+    setFormData(handleGoogleSignIn)
+    handleSubmit(handleGoogleSignIn)
   };
 
   return (
@@ -84,8 +77,9 @@ const SignIn = ({ onSignIn }) => {
             onChange={handleChange}
           />
         </div>
+      </form>
         <div className="signIn-button">
-          <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
+          <button type="submit" className="btn btn-primary" onClick={()=>handleSubmit(formData)}>
             Sign In
           </button>
           <GoogleLogin
@@ -100,7 +94,6 @@ const SignIn = ({ onSignIn }) => {
             Don't you have an account? <Link to="/register">Sign Up</Link>
           </p>
         </div>
-      </form>
     </div>
   );
 };
