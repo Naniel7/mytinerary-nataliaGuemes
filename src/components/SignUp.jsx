@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
+import jwt_decode from "jwt-decode";
 
 const SignUp = ({ onSignUp }) => {
   const [formData, setFormData] = useState({
@@ -41,6 +43,11 @@ const SignUp = ({ onSignUp }) => {
 
   const handleGoogleSignUp = () => {
     // AGREGAR GOOGLE
+  };
+
+  const signUpWithGoogle = (credentialResponse) => {
+    const dataUser = jwt_decode(credentialResponse.credential);
+    console.log(dataUser);
   };
 
   return (
@@ -108,7 +115,6 @@ const SignUp = ({ onSignUp }) => {
             name="country"
             value={formData.country}
             onChange={handleChange}
-            required
           >
             <option value="">Select your Country</option>
             <option value="Australia">Australia</option>
@@ -135,9 +141,15 @@ const SignUp = ({ onSignUp }) => {
           <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
             Sign Up
           </button>
-          <button onClick={handleGoogleSignUp} className="btn btn-danger mt-3">
-            Sign Up with Google
-          </button>
+
+          
+        <GoogleLogin
+          onSuccess={signUpWithGoogle}
+          onError={() => {
+            console.log("Login Failed");
+          }}
+        />
+          
           <p className="mt-3">
             Do you have an account? <Link to="/login">Sign In</Link>
           </p>

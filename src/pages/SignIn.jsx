@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import SignIn from "../components/SignIn";
 import axios from "axios";
 import userActions from "../stores/actions/userActions";
+import { GoogleLogin } from "@react-oauth/google";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -18,9 +19,8 @@ const LoginForm = () => {
       );
 
       if (response.status === 200) {
-        dispatch(userActions.loginUser({ email, password }));
+      
         localStorage.setItem("token", response.data.token);
-
       } else {
         dispatch(userActions.loginError());
         console.error("Error logging in");
@@ -34,6 +34,14 @@ const LoginForm = () => {
     <div className="container">
       <div className="formContainer">
         <SignIn onSignIn={handleSignIn} />
+        <GoogleLogin
+  onSuccess={credentialResponse => {
+    console.log(credentialResponse);
+  }}
+  onError={() => {
+    console.log('Login Failed');
+  }}
+/>
       </div>
     </div>
   );

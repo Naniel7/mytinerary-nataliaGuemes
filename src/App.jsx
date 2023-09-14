@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LogInForm from "./pages/SignIn";
 import LogUpForm from "./pages/SignUp";
 
+
 function App() {
   const [data, setData] = useState([]);
   const router = createBrowserRouter([
