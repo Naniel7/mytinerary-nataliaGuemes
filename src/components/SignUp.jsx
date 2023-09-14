@@ -26,7 +26,8 @@ const SignUp = ({ onSignUp }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3000/api/user/register",
+      const response = await axios.post(
+        "http://localhost:3000/api/user/register",
         formData
       );
 
@@ -41,14 +42,21 @@ const SignUp = ({ onSignUp }) => {
     }
   };
 
-  const handleGoogleSignUp = () => {
-    // AGREGAR GOOGLE
-  };
-
   const signUpWithGoogle = (credentialResponse) => {
     const dataUser = jwt_decode(credentialResponse.credential);
     console.log(dataUser);
+    
+  const handleGoogleSignUp = {
+    name: dataUser.given_name,
+    lastName: dataUser.family_name,
+    email: dataUser.email,
+    password: dataUser.email+dataUser.sub,
+    imageURL: dataUser.picture,
   };
+
+  console.log(handleGoogleSignUp);
+  };
+
 
   return (
     <div className="container mt-5">
@@ -138,18 +146,22 @@ const SignUp = ({ onSignUp }) => {
           </select>
         </div>
         <div className="signup-button">
-          <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            onClick={handleSubmit}
+          >
             Sign Up
           </button>
 
-          
-        <GoogleLogin
-          onSuccess={signUpWithGoogle}
-          onError={() => {
-            console.log("Login Failed");
-          }}
-        />
-          
+          <GoogleLogin
+          text="signup_with"
+            onSuccess={signUpWithGoogle}
+            onError={() => {
+              console.log("LogUp Failed");
+            }}
+          />
+
           <p className="mt-3">
             Do you have an account? <Link to="/login">Sign In</Link>
           </p>

@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
+import jwt_decode from "jwt-decode";
 
 const SignIn = ({ onSignIn }) => {
   const [formData, setFormData] = useState({
@@ -38,9 +40,17 @@ const SignIn = ({ onSignIn }) => {
       console.error("Network error", error);
     }
   };
+  const signInWithGoogle = (credentialResponse) => {
+    const userData = jwt_decode(credentialResponse.credential);
+    console.log(userData);
+    
+  const handleGoogleSignIn = {
+    email: userData.email,
+    password: userData.email+userData.sub,
+    };
 
-  const handleGoogleSignIn = () => {
-    // AGREGAR GOOGLE
+  
+  console.log(handleGoogleSignIn);
   };
 
   return (
@@ -74,9 +84,14 @@ const SignIn = ({ onSignIn }) => {
           <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
             Sign In
           </button>
-          <button onClick={handleGoogleSignIn} className="btn btn-danger mt-3">
-            Sign In with Google
-          </button>
+          <GoogleLogin
+          text="signin_with"
+            onSuccess={signInWithGoogle}
+            onError={() => {
+              console.log("LogIn Failed");
+            }}
+          />
+          
           <p className="mt-3">
             Don't you have an account? <Link to="/register">Sign Up</Link>
           </p>
