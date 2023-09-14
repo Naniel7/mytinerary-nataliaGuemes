@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 
@@ -13,6 +13,8 @@ const SignUp = ({ onSignUp }) => {
     imageURL: "",
     country: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,8 +34,8 @@ const SignUp = ({ onSignUp }) => {
       );
 
       if (response.status === 200) {
-        // CERRAR FORMULARIO
         onSignUp(formData.email, formData.password);
+        navigate('/', { replace: true });
       } else {
         console.error("Error saving data here");
       }

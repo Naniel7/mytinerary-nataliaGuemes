@@ -1,14 +1,17 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; 
+import { Dispatch } from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = ({ onSignIn }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,8 +34,8 @@ const SignIn = ({ onSignIn }) => {
       });
 
       if (response.ok) {
-        // Cerrar el formulario de inicio de sesión aquí
         onSignIn(formData.email, formData.password);
+        navigate('/', { replace: true });
       } else {
         console.error("Error logging in");
       }
@@ -40,17 +43,18 @@ const SignIn = ({ onSignIn }) => {
       console.error("Network error", error);
     }
   };
+
   const signInWithGoogle = (credentialResponse) => {
     const userData = jwt_decode(credentialResponse.credential);
     console.log(userData);
     
-  const handleGoogleSignIn = {
-    email: userData.email,
-    password: userData.email+userData.sub,
+    const handleGoogleSignIn = {
+      email: userData.email,
+      password: userData.email + userData.sub,
     };
-
   
-  console.log(handleGoogleSignIn);
+    console.log(handleGoogleSignIn);
+    navigate('/', { replace: true });
   };
 
   return (
@@ -85,7 +89,7 @@ const SignIn = ({ onSignIn }) => {
             Sign In
           </button>
           <GoogleLogin
-          text="signin_with"
+            text="signin_with"
             onSuccess={signInWithGoogle}
             onError={() => {
               console.log("LogIn Failed");
