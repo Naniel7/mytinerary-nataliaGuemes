@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; 
-import { Dispatch } from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from 'react-router-dom';
+import Swal from "sweetalert2";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
@@ -30,12 +30,24 @@ const SignIn = () => {
 
       if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
+        
+        let messageSucceful = response.data.message
+        Swal.fire({
+          icon: 'success',
+          text: messageSucceful
+        })
         navigate('/', { replace: true });
       } else {
         console.error("Error logging in");
       }
     } catch (error) {
+      let messageError = error.response.data.message
+      Swal.fire({
+        icon: 'error',
+        text: messageError
+      })
       console.error("Network error", error);
+
     }
   };
 

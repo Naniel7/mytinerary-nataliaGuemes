@@ -29,7 +29,7 @@ const NavigationBar = ({login}) => {
           }
            {
             login && (
-          <Button className="log-btn" variant="info" onClick={()=>handleLogOut()}>
+          <Button className="log-btn danger" variant="info" onClick={()=>handleLogOut()}>
               <BsFillPersonFill className="mr-1 bg-transparent" /> Log Out <i className="bi bi-person-fill"></i>
           </Button>
             )

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
+import Swal from "sweetalert2";
 
 const SignUp = ({ onSignUp }) => {
   const [formData, setFormData] = useState({
@@ -31,12 +32,22 @@ const SignUp = ({ onSignUp }) => {
 
       if (response.status === 200) {
         onSignUp(formData.email, formData.password);
-
+        let messageSucceful = response.data.message
+        Swal.fire({
+          icon: 'success',
+          text: messageSucceful
+        })
       } else {
         console.error("Error saving data here");
       }
-    } catch (error) {
+    } catch (error) { 
+      let messageError = error.response.data.message
+      Swal.fire({
+        icon: 'error',
+        text: messageError
+      })
       console.error("Netword error ", error);
+    
     }
   };
 
