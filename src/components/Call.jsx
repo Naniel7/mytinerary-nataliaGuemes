@@ -4,7 +4,7 @@ const CallToAction = () => {
   return (
     <Link to={"/cities"}>
       <button className='call-btn'>
-        Click to Arrive Your Dream Destination
+      Explore Your Adventure
       </button>
     </Link>
   );

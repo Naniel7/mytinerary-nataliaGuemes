@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color:#FFD700;
 }
 
 .d-flex {
@@ -17,20 +16,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(97, 246, 221);
+    background-color: #E5E5E5 !important;
     position: sticky;
     top: 0;
     z-index: 1
 }
-
-.icon{
- height: 7vh;
- background-color: transparent;
-}
-
 .logo img{
-    height: 5vh;
-    background-color: transparent;
+    height: 8vh;
 }
 .logo{
     display: flex;
@@ -41,63 +33,56 @@ header {
 }
 
 /*navbar*/
+.nav a{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
 
 Nav {
     font-weight: 600;
+    background-color: transparent;
+}
+
+Nav button{
+    height: 7vh;
+    border-radius: 30px !important;
+    padding: 0 0 !important;
+    background-color: #FFD700 !important;
+    display: flex;
+justify-content: center;
+align-items: center;
+align-content: center;
 }
 
 /*Hero*/
-.hero {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    gap: 7%;
-    margin: 4%;
-    padding: 3%;
-}
-
-.hero-text {
-    display: flex;
-    flex-direction: column;
-    padding: 3%;
-}
-
-
-.hero h3 {
-    font-size: 4.4vh;
-}
-
-.hero-img img {
-    max-width: 20vw;
-    border-radius: 50%;
-    box-shadow: 2px 2px 4px #888;
-}
-
 .hero-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 80vh;
-    margin: 1vh;
+    justify-content: center;
+    height: 60vh;
+    background-image: url(https://www.momondo.co.uk/discover/wp-content/uploads/sites/250/2020/02/DEST_NORWAY_LOFOTEN_GettyImages-1050245738_Universal_Within-usage-period_37137-1500x1312.jpg);
+    background-position: 10% 54%;
+    background-size: cover;
 }
 
-
-
 .call-btn {
-    border-radius: 10px;
+    border-radius: 30px;
     border: none;
     box-shadow: 2px 2px 6px #888;
     text-shadow: none;
     padding: 10px 20px;
     font-size: 4vh;
     color: white;
-    background: linear-gradient(to right, #254c73, #fec098);
+    background-color: #ffd90068 ;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .call-btn:hover {
     transform: scale(1.1);
-    background-color: #0056b3;
+    background-color: #FFD700;
 }
 
 
