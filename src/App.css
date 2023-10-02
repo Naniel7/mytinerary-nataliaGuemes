@@ -1,423 +1,418 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .d-flex {
-    display: flex;
+  display: flex;
 }
 
+#root {
+  background-color: #e5e5e5;
+}
 /*Header*/
-
 header {
-    height: 10vh;
-    padding: 2vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #E5E5E5 !important;
-    position: sticky;
-    top: 0;
-    z-index: 1
+  height: 10vh;
+  padding: 2vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e5e5e5 !important;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
-.logo img{
-    height: 8vh;
+.logo img {
+  height: 7vh;
 }
-.logo{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1vh;
-    background-color: transparent;
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2vh;
+  background-color: transparent;
 }
 
 /*navbar*/
-.nav a{
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+.nav-link {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1vh;
 }
-
 Nav {
-    font-weight: 600;
-    background-color: transparent;
+  font-weight: 600;
+  background-color: transparent;
 }
-
-Nav button{
-    height: 7vh;
-    border-radius: 30px !important;
-    padding: 0 0 !important;
-    background-color: #FFD700 !important;
-    display: flex;
-justify-content: center;
-align-items: center;
-align-content: center;
+Nav button {
+  height: 7vh;
+  border-radius: 30px !important;
+  padding: 0 7px !important;
+  background-color: #ffd700 !important;
+  margin-left: 3vh;
 }
 
 /*Hero*/
 .hero-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 60vh;
-    background-image: url(https://www.momondo.co.uk/discover/wp-content/uploads/sites/250/2020/02/DEST_NORWAY_LOFOTEN_GettyImages-1050245738_Universal_Within-usage-period_37137-1500x1312.jpg);
-    background-position: 10% 54%;
-    background-size: cover;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  height: 87vh;
+  background: url(https://www.momondo.co.uk/discover/wp-content/uploads/sites/250/2020/02/DEST_NORWAY_LOFOTEN_GettyImages-1050245738_Universal_Within-usage-period_37137-1500x1312.jpg);
+  background-position: 10% 54%;
+  background-attachment: fixed;
+  background-size: cover;
 }
-
 .call-btn {
-    border-radius: 30px;
-    border: none;
-    box-shadow: 2px 2px 6px #888;
-    text-shadow: none;
-    padding: 10px 20px;
-    font-size: 4vh;
-    color: white;
-    background-color: #ffd90068 ;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
+  border-radius: 30px;
+  border: none;
+  box-shadow: 2px 2px 6px #888;
+  text-shadow: none;
+  padding: 10px 20px;
+  font-size: 4vh;
+  color: white;
+  background-color: #ffd90068;
 
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
 .call-btn:hover {
-    transform: scale(1.1);
-    background-color: #FFD700;
+  transform: scale(1.1);
+  background-color: #ffd700;
 }
-
 
 /*Carousel*/
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffffe9;
+  border-radius: 2vh;
+  box-shadow: 2px 2px 4px #888;
+  margin: 3vh;
+  height: 70vh;
+}
+.carousel-container h4 {
+  display: flex;
+  justify-content: center;
+  padding-top: 4vh;
+  margin: 0;
+}
+.carousel-item{
+  padding: 3vh;
+}
+.carousel-indicators button {
+  background-color: #9984bb !important;
+  height: 1vh !important;
+}
 .cardStyle {
-    gap: 10px;
-    margin: 6vh;
-    padding: 1vh;
+  margin: 6vh;
+  padding: 1vh;
 }
-
-.cs-text {
-    display: flex;
-    justify-content: center;
-    margin: 2%;
-    text-shadow: 2px 2px 4px #888;
-}
-
 .cardStyle img {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    height: max-content;
-    height: 11vw;
-    overflow: hidden;
-    box-shadow: 2px 2px 6px #888;
-    /*clip-path: circle(40% at center);*/
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  height: max-content;
+  height: 11vw;
+  overflow: hidden;
+  /*clip-path: circle(40% at center);*/
 }
 
 .cardStyle .card {
-    width: 18rem;
+  width: 18rem;
+  box-shadow: 2px 2px 4px #888;
+  border: solid 1px #9984bb;
 }
-
-
-.carousel-indicators {
-    background-color: transparent;
-}
-
-.carousel-indicators button {
-    background-color: #9984bb !important;
-    height: 1vh !important;
-}
-
 
 /*Footer*/
 footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #fec098;
-    padding: 4vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #9984bb73;
+  padding: 4vh;
 }
 
 footer b {
-    background-color: #fec098;
+  background-color: #fec098;
 }
 
 .sm-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1vh;
-    font-size: 5vh;
-    background-color: #fec098;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+  font-size: 5vh;
+  background-color: #fec098;
 }
 
 .links-container p {
-    display: flex;
+  display: flex;
 
-    padding: 0.5vh;
-    margin: auto;
-    background-color: #fec098;
-    color: #9984bb;
-    font-weight: 700;
+  padding: 0.5vh;
+  margin: auto;
+  background-color: #fec098;
+  color: #9984bb;
+  font-weight: 700;
 }
 
 /* Cities*/
 .cities-title {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    padding: 1vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 1vh;
 }
 
 .cities-text {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    padding: 1vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 1vh;
 }
 
 .filter-input {
-    display: flex;
-    width: 300px;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    margin: 3%;
-    background-color: rgb(203, 183, 183);
+  display: flex;
+  width: 300px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin: 3%;
+  background-color: rgb(203, 183, 183);
 }
 
 .filter-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3vh;
-    align-content: center;
-    justify-content: center;
-    margin: 1vh;
-    overflow: hidden
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3vh;
+  align-content: center;
+  justify-content: center;
+  margin: 1vh;
+  overflow: hidden;
 }
 
 .filter-cards img {
-    height: 100%;
-    object-fit: cover;
+  height: 100%;
+  object-fit: cover;
 }
 
 /*city details*/
 
 .details-content {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(223, 195, 176, 0.5);
-    align-items: center;
-    padding: 2vh;
-    max-width: 70vh;
-    border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(223, 195, 176, 0.5);
+  align-items: center;
+  padding: 2vh;
+  max-width: 70vh;
+  border-radius: 50px;
 }
 
 .details-title,
 .details-subtitle,
 .details-text {
-    background: transparent;
+  background: transparent;
 }
 
 .details-text a {
-    border-radius: 10px;
-    box-shadow: 2px 2px 6px #888;
-    padding: 10px 20px;
-    font-size: 4vh;
-    text-shadow: 2px 2px 2px #888;
-    color: white;
-    background: linear-gradient(to right, #254c73, #fec098);
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    margin: 1vh;
-    display: flex;
-    justify-content: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px #888;
+  padding: 10px 20px;
+  font-size: 4vh;
+  text-shadow: 2px 2px 2px #888;
+  color: white;
+  background: linear-gradient(to right, #254c73, #fec098);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  margin: 1vh;
+  display: flex;
+  justify-content: center;
 }
 
 /*itineraries*/
 .itineraries {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    background-color: #254c73;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  background-color: #254c73;
 }
 
 .itineraries-text {
-    font-size: 5vh;
-    border-radius: 30px;
-    padding: 1.5vh 5vh;
-    background-color: #fec098;
+  font-size: 5vh;
+  border-radius: 30px;
+  padding: 1.5vh 5vh;
+  background-color: #fec098;
 }
-
 
 /*Medias*/
 @media (min-width: 1024px) {
-    .hero-text {
-        font-size: 2.7vh !important;
-    }
+  .hero-text {
+    font-size: 2.7vh !important;
+  }
 }
 
+@media (max-width: 991px) {
+  .hero-img {
+    display: none;
+  }
 
-@media(max-width: 991px) {
-    .hero-img {
-        display: none;
-    }
+  #root {
+    background-image: url("../public/plane.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center 9vh;
+  }
 
-    #root {
-        background-image: url('../public/plane.png');
-        background-size: cover;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-position: center 9vh;
-    }
+  * {
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 2px #fff;
+  }
 
-    * {
-        background-color: transparent;
-        color: rgb(0, 0, 0);
-        text-shadow: 2px 2px 2px #fff;
+  .card {
+    min-width: 25vw;
+  }
 
-    }
+  .card-img-top {
+    height: auto;
+    width: 100%;
 
-    .card {
-        min-width: 25vw;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    align-self: auto;
+  }
 
-    .card-img-top {
-        height: auto;
-        width: 100%;
+  .itinerary {
+    background-color: rgb(245, 248, 255);
+  }
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        align-self: auto;
-    }
-
-    .itinerary {
-        background-color: rgb(245, 248, 255);
-    }
-
-    footer p {
-        text-shadow: none;
-    }
+  footer p {
+    text-shadow: none;
+  }
 }
 
-
-@media(max-width: 767px) {
-    .cardStyle {
-        flex-direction: column;
-       align-items: center;
-       gap: 3vh;
-    }
-    .cardStyle .card {
-        width: 100%; 
-    }
-    .cardStyle img {
-        height: 20vh; 
-    }
-
+@media (max-width: 767px) {
+  .cardStyle {
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+  }
+  .cardStyle .card {
+    width: 100%;
+  }
+  .cardStyle img {
+    height: 20vh;
+  }
 }
-
 
 /*itineraries*/
 
 .itineraries-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 1vh;
-    gap: 1.5vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1vh;
+  gap: 1.5vh;
 }
 
 .Itinerary {
-    display: flex;
-    flex-direction: column;
-    width: 80vw;
-    box-shadow: 2px 2px 6px #888;
-    border-radius: 6px;
-    color: #9984bb;
-    padding: 0.7%;
-    background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  box-shadow: 2px 2px 6px #888;
+  border-radius: 6px;
+  color: #9984bb;
+  padding: 0.7%;
+  background-color: #fff;
 }
 
-
 .itinerary-name {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    font-size: 4vh;
-    color: #254c73;
-    background-color: #fff;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-size: 4vh;
+  color: #254c73;
+  background-color: #fff;
 }
 
 .itinerary-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: start;
-    height: 25vh;
-    background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
+  height: 25vh;
+  background-color: #fff;
 }
 
 .itinerary-block {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .itinerary-block p {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .itinerary-user {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 25%;
-    background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  background-color: #fff;
 }
 
 .itinerary-user img {
-    border-radius: 100%;
-    max-width: 10vh;
-    background-color: #fff;
+  border-radius: 100%;
+  max-width: 10vh;
+  background-color: #fff;
 }
 
 .itinerary-hashtag {
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    background-color: #fff;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
 }
 
 .itinerary-duration {
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    background-color: #fff;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
 }
 
 .itinerary-price {
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    background-color: #fff;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
 }
-
 
 .div-title {
-    background-color: #fff;
+  background-color: #fff;
 }
 
-
 .accordeon-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  margin: 0;
 }
 
 .accordeon-body {
-    background-color: #fff;
+  background-color: #fff;
 }

@@ -7,10 +7,11 @@ export default function Hero() {
     <>
       <div className="hero-container">
         <div className="hero">
-          <div className="hero-text">
-           <Call />
-          </div>
-        </div>
+          
+          <h3>Find the perfect destination</h3>
+           
+          </div><Call />
+       
         <div className="call-container">
          
         </div>
