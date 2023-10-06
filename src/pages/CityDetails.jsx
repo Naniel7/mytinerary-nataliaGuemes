@@ -54,9 +54,8 @@ export default function CityDetails({ data }) {
                         <>
                             <h2 className='details-title'>{city.place}</h2>
                             <h4 className='details-subtitle'>{city.country}</h4>
-                            <h5 className='details-text'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quas nihil laborum nisi laudantium? Assumenda doloribus, impedit ad debitis doloremque possimus reiciendis, eos numquam, nostrum voluptas blanditiis tempora esse minima.
-                                <a className='details-btn nav-link' href="/cities">Back to Cities</a>
+                            <h5 className='details-text'>{city.info}
+                                <a className='call-btn details-btn ' href="/cities">Back to Cities</a>
                             </h5>
                         </>
                     )}

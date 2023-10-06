@@ -1,14 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import { BsFacebook, BsInstagram, BsWhatsapp } from 'react-icons/bs';
+import React from "react";
+import { Link } from "react-router-dom";
+import { BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs";
 
 export default function Footer() {
   return (
     <>
       <footer>
-        <div className='links-container'>
-          <p><b>Links</b></p>
-          <div className='d-flex'>
+        <div className="links-container">
+          <p>
+            <b>Links</b>
+          </p>
+          <div className="d-flex footer-links">
             <Link to={"/"}>
               <p>Home</p>
             </Link>
@@ -18,14 +20,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className='sm-container'>
+        <div className="sm-container">
           <BsInstagram className="mr-1 bg-transparent" />
           <BsFacebook className="mr-1 bg-transparent" />
           <BsWhatsapp className="mr-1 bg-transparent" />
         </div>
-
       </footer>
-
     </>
-  )
+  );
 }
