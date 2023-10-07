@@ -200,9 +200,8 @@ footer {
 /*city details*/
 
 .details-content {
-  display: flex;
   flex-direction: column;
-  background-color: #9984bb7b;
+  background-color: #9984bb88;
   align-items: center;
   padding: 2vh;
   max-width: 70vh;
@@ -214,7 +213,16 @@ footer {
 .details-text {
   background: transparent;
 }
+.details-text{
+  flex-direction: column;
+  align-items: center;
+}
 
+.details-text a{
+  padding: 0.5vh 1vh;
+margin: auto;
+text-decoration: none;
+}
 
 /*itineraries*/
 .itineraries {
