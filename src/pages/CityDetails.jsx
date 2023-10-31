@@ -16,6 +16,8 @@ export default function CityDetails({ data }) {
   const [itineraries, setItineraries] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const selectedCity = data.find((item) => item._id === id);
     setCity(selectedCity);
 
@@ -55,8 +57,8 @@ export default function CityDetails({ data }) {
               <h4 className="details-subtitle">{city.country}</h4>
               <h5 className="details-text d-flex">
                 {city.info}
-                <div className="">
-                  <a className="call-btn details-btn " href="/cities">
+                <div className="details-btn">
+                  <a className="call-btn" href="/cities">
                     Back to Cities
                   </a>
                 </div>

@@ -5,7 +5,7 @@ const CityFilter = ({ cities }) => {
   const [filterText, setFilterText] = useState('');
 
   const filteredCities = cities.map(item => item.place).filter(city =>
-    city.toLowerCase().startsWith(filterText.trim().toLowerCase())
+    city.toLowerCase().includes(filterText.trim().toLowerCase())
   );
 
   return (
