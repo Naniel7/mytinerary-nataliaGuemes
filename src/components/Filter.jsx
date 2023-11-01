@@ -9,13 +9,13 @@ const CityFilter = ({ cities }) => {
   );
 
   return (
-    <div>
-      <input className='filter-input'
+    <div className='filter-container'>
+      <div className='filter-input'><input
         type="text"
         value={filterText}
         onChange={e => setFilterText(e.target.value)}
         placeholder="Find your next destination..."
-      />
+      /></div>
       <div className='filter-cards'>
         {cities.filter(item => filteredCities.includes(item.place)).map((city, index) => (
           <CardCreator data={city} key={index} />

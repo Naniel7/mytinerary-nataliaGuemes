@@ -7,9 +7,7 @@ export default function Footer() {
     <>
       <footer>
         <div className="links-container">
-          <p>
-            <b>Links</b>
-          </p>
+      
           <div className="d-flex footer-links">
             <Link to={"/"}>
               <p>Home</p>
