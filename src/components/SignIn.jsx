@@ -63,7 +63,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="container mt-5">
+   <>
       <h2>Sign In</h2>
       <form className="form-signIn">
         <div className="mb-3">
@@ -106,7 +106,7 @@ const SignIn = () => {
             Don't you have an account? <Link to="/register">Sign Up</Link>
           </p>
         </div>
-    </div>
+    </>
   );
 };
 

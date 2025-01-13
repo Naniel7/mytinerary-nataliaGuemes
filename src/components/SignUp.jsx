@@ -66,7 +66,7 @@ const SignUp = ({ onSignUp }) => {
   };
 
   return (
-    <div className="container mt-5">
+   <>
       <form>
         <h2>Sign Up</h2>
         <div className="mb-3">
@@ -177,7 +177,7 @@ const SignUp = ({ onSignUp }) => {
             </p>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

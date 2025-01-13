@@ -3,11 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 .d-flex {
   display: flex;
 }
-
 #root {
   background-color: #e5e5e5;
   min-width: 70vh;
@@ -57,7 +55,6 @@ Nav button {
   border-radius: 30px !important;
   padding: 0 !important;
   background-color: #ffd700 !important;
-
 }
 
 /*Hero*/
@@ -276,7 +273,7 @@ margin-top: 3vh;
 }
 .details-btn a{
 text-decoration: none;
-  }
+}
 
 /*itineraries*/
 .itineraries {
@@ -429,8 +426,6 @@ h2 {
 .form-signIn{
   height: 30vh;
 }
-
-
 
 /*Medias*/
 @media (min-width: 1024px) {
