@@ -65,7 +65,7 @@ const SignIn = () => {
   return (
     <div className="container mt-5">
       <h2>Sign In</h2>
-      <form>
+      <form className="form-signIn">
         <div className="mb-3">
           <input
             type="email"

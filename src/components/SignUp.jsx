@@ -32,22 +32,21 @@ const SignUp = ({ onSignUp }) => {
 
       if (response.status === 200) {
         onSignUp(formData.email, formData.password);
-        let messageSucceful = response.data.message
+        let messageSucceful = response.data.message;
         Swal.fire({
-          icon: 'success',
-          text: messageSucceful
-        })
+          icon: "success",
+          text: messageSucceful,
+        });
       } else {
         console.error("Error saving data here");
       }
-    } catch (error) { 
-      let messageError = error.response.data.message
+    } catch (error) {
+      let messageError = error.response.data.message;
       Swal.fire({
-        icon: 'error',
-        text: messageError
-      })
+        icon: "error",
+        text: messageError,
+      });
       console.error("Netword error ", error);
-    
     }
   };
 
@@ -68,8 +67,8 @@ const SignUp = ({ onSignUp }) => {
 
   return (
     <div className="container mt-5">
-      <h2>Sign Up</h2>
       <form>
+        <h2>Sign Up</h2>
         <div className="mb-3">
           <input
             type="text"
@@ -154,6 +153,7 @@ const SignUp = ({ onSignUp }) => {
           </select>
         </div>
       </form>
+      <div>
         <div className="signup-button">
           <button
             type="submit"
@@ -162,19 +162,21 @@ const SignUp = ({ onSignUp }) => {
           >
             Sign Up
           </button>
+          <div className="googlelogin">
+            <GoogleLogin
+              text="signup_with"
+              onSuccess={signUpWithGoogle}
+              onError={() => {
+                console.log("LogUp Failed");
+              }}
+            />
 
-          <GoogleLogin
-            text="signup_with"
-            onSuccess={signUpWithGoogle}
-            onError={() => {
-              console.log("LogUp Failed");
-            }}
-          />
-
-          <p className="mt-3">
-            Do you have an account? <Link to="/login">Sign In</Link>
-          </p>
+           
+          </div> <p className="mt-3">
+              Do you have an account? <Link to="/login">Sign In</Link>
+            </p>
         </div>
+      </div>
     </div>
   );
 };

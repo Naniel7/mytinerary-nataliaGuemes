@@ -79,11 +79,12 @@ export default function CityDetails({ data }) {
 
               <div className="itinerary-info">
                 <div className="itinerary-user">
-                  <p>
-                    <div className="div-title">User:</div>{" "}
+                   <img src={itinerary.authorPhoto} alt="authorPhoto" />
+                   <p>
+                    <div className="div-title"></div>{" "}
                     {itinerary.authorName}
                   </p>
-                  <img src={itinerary.authorPhoto} alt="authorPhoto" />
+                 
                 </div>
                 <div className="itinerary-hashtag">
                   <p>

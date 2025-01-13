@@ -1,18 +1,21 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 
+
 const CardCreator = ({ data }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
-    <Card style={{ width: '18rem' }} onClick={() => navigate(`/cities/${data._id}`)}>
-      <Card.Img variant="top" src={data.image} />
-      <Card.Body>
-        <Card.Title>{data.place}</Card.Title>
-        <Card.Text>{data.country}</Card.Text>
-      </Card.Body>
-    </Card>
+    <div className="custom-card" onClick={() => navigate(`/cities/${data._id}`)}>
+      <div
+        className="card-background"
+        style={{ backgroundImage: `url(${data.image})` }}
+      >
+      </div> <div className="card-content">
+          <h2 className="card-title">{data.place}</h2>
+          <p className="card-text">{data.country}</p>
+        </div>
+    </div>
   );
 };
 

@@ -12,6 +12,7 @@
   background-color: #e5e5e5;
   min-width: 70vh;
 }
+
 /*Header*/
 header {
   height: 10vh;
@@ -82,7 +83,6 @@ Nav button {
   font-size: 4vh;
   color: white;
   background-color: #ffd90068;
-
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 .call-btn:hover {
@@ -94,7 +94,6 @@ Nav button {
 .card{
   cursor: pointer;
 }
-
 .carousel-container {
   display: flex;
   flex-direction: column;
@@ -103,13 +102,12 @@ Nav button {
   border-radius: 2vh;
   box-shadow: 2px 2px 4px #888;
   margin: 3vh;
-  height: 70vh;
+  height: 90vh;
 }
 .carousel-container h4 {
   display: flex;
   justify-content: center;
-  padding-top: 4vh;
-  margin: 0;
+  margin: 10;
 }
 .carousel-item{
   padding: 3vh;
@@ -121,16 +119,52 @@ Nav button {
 .cardStyle {
   margin: 6vh;
   padding: 1vh;
+  gap: 1vh;
 }
-.cardStyle img {
-  height: 11vw;
-  /*clip-path: circle(40% at center);*/
-}
-
 .cardStyle .card {
   width: 18rem;
   box-shadow: 2px 2px 4px #888;
   border: solid 1px #9984bb;
+}
+.custom-card {
+  width: 18rem;
+  height: 19rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+.custom-card:hover .card-background {
+  transform: scale(1.1);
+  transition: 1.2s;
+}
+.card-background {
+  width: 100%;transition: transform 0.5s ease;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.card-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+}
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.card-text {
+  font-size: 1rem;
+  margin: 0;
 }
 
 /*Footer*/
@@ -151,11 +185,9 @@ footer {
   background-color: transparent;
   cursor: pointer;
 }
-
 .footer-links{
   flex-direction: column;
 }
-
 .footer-links a{
   text-decoration: none;
 }
@@ -170,7 +202,6 @@ footer {
   justify-content: center;
   padding: 1vh;
 }
-
 .cities-text {
   display: flex;
   align-content: center;
@@ -197,7 +228,6 @@ justify-content: center;
   text-align: center;
   box-shadow: 2px 2px 6px #888;
 }
-
 .filter-cards {
   display: flex;
   flex-wrap: wrap;
@@ -211,53 +241,44 @@ justify-content: center;
 .card{
   box-shadow: 2px 2px 6px #888;
 }
-
-
 .filter-cards img {
   max-width: 100%;
   height: 24vh;
 }
 
-
 /*city details*/
-
 .details-content {
+  color: #000000;
   flex-direction: column;
-  background-color: #9984bba5;
+  background-color: rgba(255, 255, 255, 0.648);
   align-items: center;
-  max-width: 70vh;
+  max-width: 100vh;
   border-radius: 50px;
   padding: 2vh;
 }
-
 .details-title,
 .details-subtitle,
 .details-text {
   background: transparent;
 }
-
 .details-text{
   flex-direction: column;
   align-items: center;
   margin: 1vh;
 }
-
 .details-title{
   padding: 0.5vh 1vh;
 text-decoration: none;  
 font-weight: 700;
 }
-
 .details-btn{
 margin-top: 3vh;
 }
-
 .details-btn a{
 text-decoration: none;
   }
 
 /*itineraries*/
-
 .itineraries {
   width: 100vw;
   height: 100vh;
@@ -267,16 +288,12 @@ text-decoration: none;
   justify-items: center;
   background-color: #254c73;
 }
-
 .itineraries-text {
   font-size: 5vh;
   border-radius: 30px;
   padding: 1.5vh 5vh;
   background-color: #fec098;
 }
-
-/*itineraries*/
-
 .itineraries-container {
   display: flex;
   align-items: center;
@@ -285,7 +302,6 @@ text-decoration: none;
   padding: 3vh;
   gap: 1.5vh;
 }
-
 .Itinerary {
   display: flex;
   flex-direction: column;
@@ -296,7 +312,6 @@ text-decoration: none;
   padding: 10px;
   background-color: #fff;
 }
-
 .itinerary-name {
   display: flex;
   align-items: center;
@@ -306,7 +321,6 @@ text-decoration: none;
   color: #254c73;
   background-color: #fff;
 }
-
 .itinerary-info {
   display: flex;
   flex-direction: row;
@@ -315,16 +329,13 @@ text-decoration: none;
   height: 25vh;
   background-color: #fff;
 }
-
 .itinerary-block {
   background-color: #fff;
 }
-
 .itinerary-block p {
   background-color: #fff;
   padding: 15px;
 }
-
 .itinerary-user {
   display: flex;
   flex-direction: column;
@@ -333,38 +344,32 @@ text-decoration: none;
   width: 25%;
   background-color: #fff;
 }
-
 .itinerary-user img {
   border-radius: 100%;
   max-width: 10vh;
   background-color: #fff;
 }
-
 .itinerary-hashtag {
   width: 25%;
   display: flex;
   justify-content: center;
   background-color: #fff;
 }
-
 .itinerary-duration {
   width: 25%;
   display: flex;
   justify-content: center;
   background-color: #fff;
 }
-
 .itinerary-price {
   width: 25%;
   display: flex;
   justify-content: center;
   background-color: #fff;
 }
-
 .div-title {
   background-color: #fff;
 }
-
 .accordeon-content {
   display: flex;
   flex-direction: column;
@@ -372,24 +377,58 @@ text-decoration: none;
   background-color: #fff;
   margin: 0;
 }
-
 .accordeon-body {
   background-color: #fff;
 }
-
-form{  display: flex;
+form{
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  max-width: 50vw;
-  height: auto;
+  height: 50vh;
 }
 
-
-
-
-
-
+/*sign in & sign up*/
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;  
+  max-width: 50vw !important;
+  margin: 3rem;
+  padding: 0.5rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: auto;
+}
+h2 {
+  display: flex;
+  flex-direction: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #444;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+.signup-button, .signIn-button{
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0 0 0;
+}
+.signup-button button, .signIn-button button{
+  width: 215px !important;
+}
+.container p{
+  font-size: 14px;
+}
+.form-signIn{
+  height: 30vh;
+}
 
 
 
@@ -406,9 +445,7 @@ form{  display: flex;
   }
 
   #root {
-    background-image: url("../public/plane.png");
-    background-size: cover;
-    background-attachment: fixed;
+   background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center 9vh;
   }
@@ -416,9 +453,9 @@ form{  display: flex;
   * {
     background-color: transparent;
     color: rgb(0, 0, 0);
-    text-shadow: 2px 2px 2px #fff;
   }
 
+  
   .card {
     min-width: 25vw;
   }
@@ -426,7 +463,6 @@ form{  display: flex;
   .card-img-top {
     height: auto;
     width: 100%;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -456,3 +492,4 @@ form{  display: flex;
     height: 20vh;
   }
 }
+
