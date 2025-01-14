@@ -98,16 +98,15 @@ Nav button {
   background-color: #ffffffe9;
   border-radius: 2vh;
   box-shadow: 2px 2px 4px #888;
-  margin: 3vh;
-  height: 90vh;
+  margin: 4vh;
+  height: 31rem;
 }
 .carousel-container h4 {
   display: flex;
   justify-content: center;
-
 }
 .carousel-item{
-  padding: 3vh;
+  padding: 1vh;
 }
 .carousel-indicators button {
   background-color: #9984bb !important;
@@ -124,8 +123,9 @@ Nav button {
   border: solid 1px #9984bb;
 }
 .custom-card {
+  display: flex;
   width: 18rem;
-  height: 19rem;
+  height: 17rem;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
@@ -168,7 +168,7 @@ Nav button {
 footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content:space-between;
   background-color: #2200ff14;
   padding: 3vh;
   font-weight: 700;
