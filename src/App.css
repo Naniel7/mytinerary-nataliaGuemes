@@ -104,7 +104,7 @@ Nav button {
 .carousel-container h4 {
   display: flex;
   justify-content: center;
-  margin: 10;
+
 }
 .carousel-item{
   padding: 3vh;
@@ -185,9 +185,7 @@ footer {
 .footer-links{
   flex-direction: column;
 }
-.footer-links a{
-  text-decoration: none;
-}
+
 .footer-links p{
   margin: 0;
 }
@@ -383,6 +381,7 @@ form{
   justify-content: center;
   align-content: center;
   height: 50vh;
+  background-color: #fff !important;
 }
 
 /*sign in & sign up*/
@@ -393,7 +392,7 @@ form{
   align-content: center;  
   max-width: 50vw !important;
   margin: 3rem;
-  padding: 0.5rem;
+  padding: 4rem;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
