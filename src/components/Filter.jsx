@@ -24,5 +24,4 @@ const CityFilter = ({ cities }) => {
   );
 };
 
-
 export default CityFilter;
