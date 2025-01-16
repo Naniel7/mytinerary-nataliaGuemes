@@ -2,13 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .d-flex {
   display: flex;
 }
 #root {
   background-color: #e5e5e5;
-  min-width: 70vh;
+  min-height: 100vh;
 }
 
 /*Header*/
@@ -43,8 +44,8 @@ header {
   align-content: center;
   gap: 7px;
 }
-.navbar{
-  display: flex!important;
+.navbar {
+  display: flex !important;
   gap: 10px;
 }
 Nav {
@@ -52,11 +53,11 @@ Nav {
   background-color: transparent;
 }
 Nav button {
-  border-radius: 30px !important;
+  border-radius: 50px !important;
   padding: 0 !important;
   background-color: #007bff !important;
 }
-Nav button a{
+Nav button a {
   color: #fff !important;
 }
 
@@ -74,12 +75,11 @@ Nav button a{
   background-attachment: fixed;
   background-size: cover;
 }
-.call-btn{
+.call-btn {
   position: relative;
   display: inline-block;
   border-radius: 50px;
   padding: 10px 30px;
-  font-size: 16px;
   font-weight: 600;
   color: #fff;
   background-color: #007bff;
@@ -92,7 +92,7 @@ Nav button a{
 }
 .call-btn::before,
 .call-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
@@ -101,15 +101,12 @@ Nav button a{
   transform: translateX(-100%);
   transition: transform 0.4s ease;
 }
-
 .call-btn::before {
   top: 0;
 }
-
 .call-btn::after {
   bottom: 0;
 }
-
 .call-btn:hover {
   background-color: #0056b3;
   color: #e3e3e3;
@@ -119,9 +116,8 @@ Nav button a{
   transform: translateX(100%);
 }
 
-
 /*Carousel*/
-.card{
+.card {
   cursor: pointer;
 }
 .carousel-container {
@@ -129,7 +125,7 @@ Nav button a{
   flex-direction: column;
   justify-content: center;
   background-color: #ffffffe9;
-  border-radius: 2vh;
+  border-radius: 50px;
   box-shadow: 2px 2px 4px #888;
   margin: 4vh;
   height: 31rem;
@@ -138,7 +134,7 @@ Nav button a{
   display: flex;
   justify-content: center;
 }
-.carousel-item{
+.carousel-item {
   padding: 1vh;
 }
 .carousel-indicators button {
@@ -148,7 +144,7 @@ Nav button a{
 .cardStyle {
   margin: 6vh;
   padding: 1vh;
-  gap: 1vh;
+  gap: 3vh;
 }
 .cardStyle .card {
   width: 18rem;
@@ -161,7 +157,7 @@ Nav button a{
   height: 17rem;
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 25px;
   cursor: pointer;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
@@ -171,7 +167,8 @@ Nav button a{
   transition: 1.2s;
 }
 .card-background {
-  width: 100%;transition: transform 0.5s ease;
+  width: 100%;
+  transition: transform 0.5s ease;
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -193,34 +190,23 @@ Nav button a{
   margin-bottom: 0.5rem;
 }
 .card-text {
-  font-size: 1rem;
   margin: 0;
 }
 
 /*Footer*/
 footer {
-  display: flex;
-  flex-direction: row;
-  justify-content:space-between;
   background-color: #2200ff14;
-  padding: 3vh;
-  font-weight: 700;
+  min-height: 10vh;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
 }
 .sm-container {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-  gap: 1vh;
-  font-size: 5vh;
-  background-color: transparent;
-  cursor: pointer;
-}
-.footer-links{
-  flex-direction: column;
-}
-
-.footer-links p{
-  margin: 0;
+  gap: 0.5rem;
+  font-size: 2rem;
 }
 
 /* Cities*/
@@ -236,20 +222,20 @@ footer {
   justify-content: center;
   padding: 1vh;
 }
-.filter-container{
+.filter-container {
   padding: 5vh;
   align-content: center;
   justify-content: center;
 }
-.filter-input{
+.filter-input {
   display: flex;
-justify-content: center;
-  padding: 1vh;  
+  justify-content: center;
+  padding: 1vh;
 }
 .filter-input input {
   display: flex;
   align-self: auto;
-  min-width: 300px; 
+  min-width: 300px;
   border: #564aa4a4;
   border-radius: 50px;
   width: auto;
@@ -266,7 +252,7 @@ justify-content: center;
   overflow: hidden;
   padding: 3vh;
 }
-.card{
+.card {
   box-shadow: 2px 2px 6px #888;
 }
 .filter-cards img {
@@ -289,64 +275,46 @@ justify-content: center;
 .details-text {
   background: transparent;
 }
-.details-text{
+.details-text {
   flex-direction: column;
   align-items: center;
   margin: 1vh;
 }
-.details-title{
+.details-title {
   padding: 0.5vh 1vh;
-text-decoration: none;  
-font-weight: 700;
+  text-decoration: none;
+  font-weight: 700;
 }
-.details-btn{
-margin-top: 3vh;
+.details-btn {
+  margin-top: 3vh;
 }
-.details-btn a{
-text-decoration: none;
+.details-btn a {
+  text-decoration: none;
 }
 
 /*itineraries*/
 .itineraries {
-  width: 100vw;
-  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
-  background-color: #254c73;
-}
-.itineraries-text {
-  font-size: 5vh;
-  border-radius: 30px;
-  padding: 1.5vh 5vh;
-  background-color: #fec098;
+  flex-direction: column;
 }
 .itineraries-container {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 1vh;
-  padding: 3vh;
+  margin: 3vh;
   gap: 1.5vh;
+  padding: 2vh;
 }
 .Itinerary {
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 70vw;
+  height: auto;
+  justify-content: space-between;
   box-shadow: 2px 2px 6px #888;
-  border-radius: 6px;
+  border-radius: 50px;
   color: #9984bb;
-  padding: 10px;
-  background-color: #fff;
-}
-.itinerary-name {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  font-size: 4vh;
-  color: #254c73;
+  padding: 2vh;
   background-color: #fff;
 }
 .itinerary-info {
@@ -354,67 +322,37 @@ text-decoration: none;
   flex-direction: row;
   justify-content: space-around;
   align-items: start;
-  height: 25vh;
-  background-color: #fff;
+  padding: 2vh;
+  flex: 1;
 }
-.itinerary-block {
-  background-color: #fff;
+.itinerary-name {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  color: #254c73;
 }
 .itinerary-block p {
-  background-color: #fff;
-  padding: 15px;
+  padding: 2vh;
+}
+.itinerary-hashtag,
+.itinerary-duration,
+.itinerary-price,
+.itinerary-likes,
+.itinerary-user {
+  width: 20%;
+  display: flex;
+  justify-content: center;
 }
 .itinerary-user {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 25%;
-  background-color: #fff;
 }
 .itinerary-user img {
   border-radius: 100%;
   max-width: 10vh;
-  background-color: #fff;
-}
-.itinerary-hashtag {
-  width: 25%;
-  display: flex;
-  justify-content: center;
-  background-color: #fff;
-}
-.itinerary-duration {
-  width: 25%;
-  display: flex;
-  justify-content: center;
-  background-color: #fff;
-}
-.itinerary-price {
-  width: 25%;
-  display: flex;
-  justify-content: center;
-  background-color: #fff;
-}
-.div-title {
-  background-color: #fff;
-}
-.accordeon-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  margin: 0;
-}
-.accordeon-body {
-  background-color: #fff;
-}
-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  height: 50vh;
-  background-color: #fff !important;
 }
 
 /*sign in & sign up*/
@@ -422,47 +360,46 @@ form{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;  
+  align-content: center;
   max-width: 50vw !important;
-  margin: 3rem;
-  padding: 4rem;
+  margin: 2rem;
   background: #fff;
-  border-radius: 8px;
+  border-radius: 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: auto;
+}
+form{
+  padding: 3rem 3rem 0 3rem ;
 }
 h2 {
   display: flex;
   flex-direction: wrap;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  color: #444;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
 }
-.signup-button, .signIn-button{
+.signup-button,
+.signIn-button {
+  display: flex; 
   gap: 10px;
-  display: flex;
+  padding: 1rem 3rem;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 3rem 0 0 0;
 }
-.signup-button button, .signIn-button button{
-  width: 215px !important;
+.signup-button button,
+.signIn-button button {
+  width: 213px !important;
 }
-.container p{
-  font-size: 14px;
+.container p {
+  font-size: 1rem;
 }
-.form-signIn{
+.form-signIn {
   height: 30vh;
 }
 
 /*Medias*/
 @media (min-width: 1024px) {
   .hero-text {
-    font-size: 2.7vh !important;
+    font-size: 2.7rem;
   }
 }
 
@@ -472,7 +409,7 @@ h2 {
   }
 
   #root {
-   background-attachment: fixed;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center 9vh;
   }
@@ -482,7 +419,6 @@ h2 {
     color: rgb(0, 0, 0);
   }
 
-  
   .card {
     min-width: 25vw;
   }
@@ -505,18 +441,3 @@ h2 {
     text-shadow: none;
   }
 }
-
-@media (max-width: 767px) {
-  .cardStyle {
-    flex-direction: column;
-    align-items: center;
-    gap: 3vh;
-  }
-  .cardStyle .card {
-    width: 100%;
-  }
-  .cardStyle img {
-    height: 20vh;
-  }
-}
-

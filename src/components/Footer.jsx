@@ -5,18 +5,18 @@ import { BsLinkedin, BsGithub } from "react-icons/bs";
 export default function Footer() {
   return (
     <>
-      <footer>
-        <div className="links-container">
-          <div className="d-flex footer-links">
+      <footer className="d-flex">
+        <div className="links-container d-flex">
+          {/* <div className="d-flex footer-links">
             <Link to={"/"}>
               <p>Home</p>
             </Link>
             <Link to={"/cities"}>
               <p>Cities</p>
             </Link>
-          </div>
+          </div> */}
         </div>
-        <div className="sm-container">
+        <div className="sm-container d-flex">
           <a 
             href="https://www.linkedin.com/in/natalia-g%C3%BCemes-duarte-2b1783184/" 
             target="_blank" 

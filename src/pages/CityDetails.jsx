@@ -75,16 +75,12 @@ export default function CityDetails({ data }) {
           <div className="Itinerary" key={itinerary._id}>
             <p className="itinerary-name">{itinerary.name}</p>
             <div className="itinerary-block">
-              <p>Likes: {itinerary.likes}</p>
-
               <div className="itinerary-info">
                 <div className="itinerary-user">
-                   <img src={itinerary.authorPhoto} alt="authorPhoto" />
-                   <p>
-                    <div className="div-title"></div>{" "}
-                    {itinerary.authorName}
+                  <img src={itinerary.authorPhoto} alt="authorPhoto" />
+                  <p>
+                    <div className="div-title"></div> {itinerary.authorName}
                   </p>
-                 
                 </div>
                 <div className="itinerary-hashtag">
                   <p>
@@ -104,9 +100,12 @@ export default function CityDetails({ data }) {
                     <PriceIcon price={itinerary.price} />
                   </p>
                 </div>
+                <div className="itinerary-likes">
+                    <p>Likes: {itinerary.likes}</p>
+                </div>
               </div>
               <div className="itinerary-button">
-                <Accordion>
+                {/* <Accordion>
                   <Accordion.Item eventKey="0">
                     <Accordion.Header>View More</Accordion.Header>
                     <Accordion.Body>
@@ -117,7 +116,7 @@ export default function CityDetails({ data }) {
                       </div>
                     </Accordion.Body>
                   </Accordion.Item>
-                </Accordion>
+                </Accordion> */}
               </div>
             </div>
           </div>
