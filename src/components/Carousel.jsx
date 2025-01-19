@@ -27,6 +27,7 @@ const CarouselCreator = ({ data }) => {
 
   return (
     <>
+    <div className="carousel-external">
       <div className="carousel-container">
         <div className="cs-text">
           <h4>Popular Itineraries</h4>
@@ -48,7 +49,7 @@ const CarouselCreator = ({ data }) => {
             ))}
           </Carousel>
         </div>
-      </div>
+      </div></div>
     </>
   );
 };
