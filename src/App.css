@@ -157,6 +157,7 @@ Nav button a {
 .cardStyle {
   padding: 1vh;
   gap: 3vh;
+  justify-content: space-between;
 }
 .cardStyle .card {
   width: 18rem;
@@ -388,7 +389,7 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  font-size: 1.5rem !important;
+  font-size: 2vw;
 }
 .signup-button,
 .signIn-button {
@@ -501,16 +502,34 @@ form{
 }
 
 
-@media (max-height: 720px) {
-  .cardStyle{
+@media (max-width: 768px) {
+
+  .custom-card{
     flex-wrap: wrap;
+    justify-content: center;
+    max-height: 30vh;
+    max-width: 40vw;
  }
+
+ .cardStyle{
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .carousel-container {
-  max-height: 120vh;
+  max-height: 100vh;
 }
-.carousel-item{ display: flex;
+.carousel-item{ 
+  display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 77vh;
 }
+h2{
+  font-size: 3vh;
+}
+}
+
+@media (max-width: 683px) {
+
 
 }
