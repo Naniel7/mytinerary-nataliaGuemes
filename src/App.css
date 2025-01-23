@@ -505,23 +505,12 @@ form{
   .cardStyle{
     flex-wrap: wrap;
  }
-  
-.carousel-external{
- 
-  gap: 1rem;
-  flex-direction: column;
-  height: 120vh;
-}
-.card-content{ display: flex;
-  flex-direction: column;
-
+.carousel-container {
+  max-height: 120vh;
 }
 .carousel-item{ display: flex;
   flex-direction: column;
   height: 90vh;
 }
 
-.carousel-container{
-height: 120vh;
-}
 }
