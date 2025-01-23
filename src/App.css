@@ -143,7 +143,7 @@ Nav button a {
 .carousel-container h4 {
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  padding: 2rem 0;
   margin: 0;
 }
 .carousel-item {
@@ -389,7 +389,7 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  font-size: 2vw;
+  font-size: 2vw !important;
 }
 .signup-button,
 .signIn-button {
@@ -426,6 +426,9 @@ form{
   }
   .card-text {
     display: none;
+  }
+  h2{
+    font-size: 1vh;
   }
   }
 @media (max-width: 1024px) {
@@ -507,29 +510,21 @@ form{
   .custom-card{
     flex-wrap: wrap;
     justify-content: center;
-    max-height: 30vh;
-    max-width: 40vw;
+    max-height: 20vh;
+    max-width: 30vw;
  }
-
  .cardStyle{
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.carousel-container {
-  max-height: 100vh;
-}
 .carousel-item{ 
   display: flex;
   flex-direction: column;
-  height: 77vh;
+  max-height: 55vh;
+  padding: 0;
 }
-h2{
-  font-size: 3vh;
+.card-content{
+  height: 10vh;
 }
-}
-
-@media (max-width: 683px) {
-
-
 }
