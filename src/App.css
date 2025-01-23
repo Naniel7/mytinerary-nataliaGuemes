@@ -35,7 +35,6 @@ header {
   background-color: transparent;
 }
 
-
 /*navbar*/
 .nav-link {
   display: flex !important;
@@ -63,7 +62,7 @@ Nav button a {
   color: #fff !important;
   padding: 0 !important;
 }
-.btn{
+.btn {
   padding: 0.5rem !important;
 }
 
@@ -136,7 +135,7 @@ Nav button a {
   margin: 4vh;
   min-height: 20rem;
 }
-.carousel-container{
+.carousel-container {
   padding: 1rem;
 }
 .carousel-container h4 {
@@ -146,7 +145,7 @@ Nav button a {
   margin: 0;
 }
 .carousel-item {
-  padding: 0 3vh 10vh 3vh!important;
+  padding: 0 3vh 10vh 3vh !important;
 }
 .carousel-indicators button {
   background-color: #9984bb !important;
@@ -187,21 +186,22 @@ Nav button a {
   position: relative;
 }
 .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 1rem;
+  height: 16vh;
+  padding: 0.1rem;
   background: rgba(0, 0, 0, 0.5);
   color: white;
   text-align: center;
 }
 .card-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-}
-.card-text {
-  margin: 0;
 }
 
 /*Footer*/
@@ -368,7 +368,7 @@ footer {
 
 /*sign in & sign up*/
 .formContainer {
-  padding:  3vh 4vh;
+  padding: 3vh 4vh;
 }
 .container {
   display: flex;
@@ -388,10 +388,11 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  font-size: 1.5rem !important;
 }
 .signup-button,
 .signIn-button {
-  display: flex; 
+  display: flex;
   gap: 10px;
   padding: 1rem 2rem;
   flex-wrap: wrap;
@@ -400,15 +401,13 @@ h2 {
 }
 .signup-button button,
 .signIn-button button {
-  width: 213px ;
+  width: 213px;
 }
 
 /* 
 form{
   padding: 3rem 3rem 0 3rem ;
 }
-
-
 
 .container p {
   font-size: 1rem;
@@ -424,26 +423,21 @@ form{
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 991.5px) {
   .hero-img {
     display: none;
   }
-
   #root {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center 9vh;
   }
-
   * {
     background-color: transparent;
-    color: rgb(0, 0, 0);
   }
-
   .card {
-    min-width: 25vw;
+    min-width: 10vw;
   }
-
   .card-img-top {
     height: auto;
     width: 100%;
@@ -453,13 +447,55 @@ form{
     align-content: center;
     align-self: auto;
   }
-
   .itinerary {
     background-color: rgb(245, 248, 255);
   }
-
   footer p {
     text-shadow: none;
   }
- 
+  .navbar button {
+    background-color: transparent !important;
+    border: none;
+  }
+  .navbar {
+    background-color: transparent;
+    border-radius: 25px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: sticky;
+  }
+  .cardStyle,
+  .card-background {
+    max-height: 47vh;
+  }
+  .carousel-container {
+    max-height: 77vh;
+  }
+  .card-background,
+  .custom-card {
+    max-height: 40ch;
+  }
+  .card-text {
+    display: none;
+  }
+  .filter-cards div {
+    width: 25vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardStyle,
+  .filter-cards {
+    display: flex;
+    flex-direction: column;
+    max-height: 70vh;
+  }
+
+.card-content{
+ background-color: rgba(0, 0, 0, 0.3);
+}
+
 }

@@ -32,7 +32,7 @@ const CarouselCreator = ({ data }) => {
         <div className="cs-text">
           <h4>Popular Itineraries</h4>
         </div>
-        <div>
+        <div className="cardSlide-container">
           <Carousel
             activeIndex={activeIndex}
             onSelect={handleSlideChange}
