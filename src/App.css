@@ -57,7 +57,9 @@ Nav button {
   background-color: #007bff !important;
   padding: 0 !important;
 }
-
+.navbar-toggler-icon{
+  position: relative
+}
 Nav button a {
   color: #fff !important;
   padding: 0 !important;
@@ -199,9 +201,7 @@ Nav button a {
   text-align: center;
 }
 .card-title {
-  font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
 }
 
 /*Footer*/
@@ -416,25 +416,18 @@ form{
   height: 30vh;
 } */
 
-/*Medias*/
-@media (min-width: 1024px) {
-  .hero-text {
-    font-size: 2.7rem;
-  }
-}
 
-@media (max-width: 991.5px) {
-  .hero-img {
+/*Medias*/
+@media (max-width: 1112px) {
+  .card-background,
+  .custom-card {
+    max-height: 404vh;
+  }
+  .card-text {
     display: none;
   }
-  #root {
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center 9vh;
   }
-  * {
-    background-color: transparent;
-  }
+@media (max-width: 1024px) {
   .card {
     min-width: 10vw;
   }
@@ -447,11 +440,44 @@ form{
     align-content: center;
     align-self: auto;
   }
-  .itinerary {
-    background-color: rgb(245, 248, 255);
+  .cardStyle,
+  .card-background {
+    max-height: 47vh;
   }
-  footer p {
-    text-shadow: none;
+
+  .carousel-container {
+    max-height: 77vh;
+  }
+  .card-text {
+    display: none;
+  }
+  .card-background,
+  .custom-card {
+    max-height: 40vh;
+  }
+  .filter-cards div {
+    width: 25vw;
+  }
+}
+
+@media (max-width: 991.5px) {
+  #root {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center 9vh;
+  }
+  
+  
+  .hero-img {
+    display: none;
+  }
+  
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: sticky;
   }
   .navbar button {
     background-color: transparent !important;
@@ -461,41 +487,41 @@ form{
     background-color: transparent;
     border-radius: 25px;
   }
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: sticky;
+
+  .navbar-toggler-icon{
+    position: relative;
   }
-  .cardStyle,
-  .card-background {
-    max-height: 47vh;
+
+  .itinerary {
+    background-color: rgb(245, 248, 255);
   }
-  .carousel-container {
-    max-height: 77vh;
-  }
-  .card-background,
-  .custom-card {
-    max-height: 40ch;
-  }
-  .card-text {
-    display: none;
-  }
-  .filter-cards div {
-    width: 25vw;
+  footer p {
+    text-shadow: none;
   }
 }
 
-@media (max-width: 600px) {
-  .cardStyle,
-  .filter-cards {
-    display: flex;
-    flex-direction: column;
-    max-height: 70vh;
-  }
 
-.card-content{
- background-color: rgba(0, 0, 0, 0.3);
+@media (max-height: 720px) {
+  .cardStyle{
+    flex-wrap: wrap;
+ }
+  
+.carousel-external{
+ 
+  gap: 1rem;
+  flex-direction: column;
+  height: 120vh;
+}
+.card-content{ display: flex;
+  flex-direction: column;
+
+}
+.carousel-item{ display: flex;
+  flex-direction: column;
+  height: 90vh;
 }
 
+.carousel-container{
+height: 120vh;
+}
 }
