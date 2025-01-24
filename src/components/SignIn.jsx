@@ -63,7 +63,7 @@ const SignIn = () => {
 
   return (
     <>
-      <h2>Sign In</h2>
+      <h3>Sign In</h3>
       <form className="form-signIn">
         <div className="mb-3">
           <input

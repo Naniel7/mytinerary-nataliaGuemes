@@ -68,7 +68,7 @@ const SignUp = ({ onSignUp }) => {
   return (
    <>
       <form>
-        <h2>Sign Up</h2>
+        <h3>Sign Up</h3>
         <div className="mb-3">
           <input
             type="text"
