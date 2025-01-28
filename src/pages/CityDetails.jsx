@@ -5,8 +5,7 @@ import axios from "axios";
 import citiesActions from "../stores/actions/citiesAction";
 import itinerariesActions from "../stores/actions/itinerariesActions";
 import PriceIcon from "../components/PriceIcon";
-import Accordion from "react-bootstrap/Accordion";
-import { BsTools } from "react-icons/bs";
+import Itineraries from "../components/Itinerary";
 
 export default function CityDetails({ data }) {
   const { id } = useParams();
@@ -35,6 +34,19 @@ export default function CityDetails({ data }) {
     const itinerariesData = [];
     dispatch(itinerariesActions.add_itineraries(itinerariesData));
   }, [data, id, dispatch]);
+
+  const handleNewItinerary = (newItinerary) => {
+    setItineraries((prevItineraries) => [...prevItineraries, newItinerary]);
+    // Opcional: Enviar el nuevo itinerario al backend
+    axios
+      .post(`http://localhost:3000/api/itineraries/${id}`, newItinerary)
+      .then((response) => {
+        console.log("Itinerary saved:", response.data);
+      })
+      .catch((error) => {
+        console.error("Error saving itinerary:", error);
+      });
+  };
 
   const pageStyle = {
     backgroundImage: city ? `url(${city.image})` : "",
@@ -71,6 +83,14 @@ export default function CityDetails({ data }) {
       <div className="itineraries-container">
         <h2>Itineraries</h2>
 
+        {/* Renderizar el formulario para crear itinerarios */}
+        <Itineraries
+          onSubmit={handleNewItinerary}
+          defaultAuthorName="Default Author"
+          isLoggedIn={true} // Cambiar según el estado real de autenticación
+        />
+
+        {/* Renderizar los itinerarios existentes */}
         {itineraries.map((itinerary) => (
           <div className="Itinerary" key={itinerary._id}>
             <p className="itinerary-name">{itinerary.name}</p>
@@ -101,22 +121,8 @@ export default function CityDetails({ data }) {
                   </p>
                 </div>
                 <div className="itinerary-likes">
-                    <p>Likes: {itinerary.likes}</p>
+                  <p>Likes: {itinerary.likes}</p>
                 </div>
-              </div>
-              <div className="itinerary-button">
-                {/* <Accordion>
-                  <Accordion.Item eventKey="0">
-                    <Accordion.Header>View More</Accordion.Header>
-                    <Accordion.Body>
-                      <div className="accordeon-content">
-                        {" "}
-                        <BsTools />
-                        <p>UNDER CONSTRUCTION</p>
-                      </div>
-                    </Accordion.Body>
-                  </Accordion.Item>
-                </Accordion> */}
               </div>
             </div>
           </div>

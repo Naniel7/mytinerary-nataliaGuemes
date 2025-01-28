@@ -17,7 +17,6 @@ export default function Layout({ children }) {
       <Header login={login}/>
       {children}
       <Footer />
-
     </>
   )
 }
