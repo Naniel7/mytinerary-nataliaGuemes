@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import citiesActions from "../stores/actions/citiesAction";
 import itinerariesActions from "../stores/actions/itinerariesActions";
 import PriceIcon from "../components/PriceIcon";
-import Itineraries from "../components/Itinerary";
+import CreateItinerary from "../components/CreateItinerary";
+import { Modal, Button } from "react-bootstrap";
 
-export default function CityDetails({ data }) {
+export default function CityDetails({ data, isLoggedIn }) {
   const { id } = useParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [city, setCity] = useState(null);
   const [itineraries, setItineraries] = useState([]);
+  const [likedItineraries, setLikedItineraries] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,29 +27,34 @@ export default function CityDetails({ data }) {
     axios
       .get(`http://localhost:3000/api/itineraries/${id}`)
       .then((response) => {
-        console.log(response);
         dispatch(citiesActions.add_cities(response.data));
         setItineraries(response.data);
       })
       .catch((error) => {
-        console.error("Error to get API data:", error);
+        console.error("Error fetching API data:", error);
       });
 
     const itinerariesData = [];
     dispatch(itinerariesActions.add_itineraries(itinerariesData));
   }, [data, id, dispatch]);
 
-  const handleNewItinerary = (newItinerary) => {
-    setItineraries((prevItineraries) => [...prevItineraries, newItinerary]);
-    // Opcional: Enviar el nuevo itinerario al backend
-    axios
-      .post(`http://localhost:3000/api/itineraries/${id}`, newItinerary)
-      .then((response) => {
-        console.log("Itinerary saved:", response.data);
-      })
-      .catch((error) => {
-        console.error("Error saving itinerary:", error);
-      });
+  const handleLike = (itineraryId) => {
+    if (isLoggedIn && !likedItineraries[itineraryId]) {
+      setLikedItineraries((prev) => ({ ...prev, [itineraryId]: true }));
+      setItineraries((prevItineraries) =>
+        prevItineraries.map((itinerary) =>
+          itinerary._id === itineraryId
+            ? { ...itinerary, likes: itinerary.likes + 1 }
+            : itinerary
+        )
+      );
+    }
+  };
+
+  const toggleModal = () => setShowModal(!showModal);
+
+  const handleSignUpRedirect = () => {
+    navigate("/signup"); // Redirige al formulario de registro
   };
 
   const pageStyle = {
@@ -83,14 +92,6 @@ export default function CityDetails({ data }) {
       <div className="itineraries-container">
         <h2>Itineraries</h2>
 
-        {/* Renderizar el formulario para crear itinerarios */}
-        <Itineraries
-          onSubmit={handleNewItinerary}
-          defaultAuthorName="Default Author"
-          isLoggedIn={true} // Cambiar según el estado real de autenticación
-        />
-
-        {/* Renderizar los itinerarios existentes */}
         {itineraries.map((itinerary) => (
           <div className="Itinerary" key={itinerary._id}>
             <p className="itinerary-name">{itinerary.name}</p>
@@ -124,10 +125,49 @@ export default function CityDetails({ data }) {
                   <p>Likes: {itinerary.likes}</p>
                 </div>
               </div>
+              <div className="itinerary-buttons">
+                <button
+                  onClick={() => handleLike(itinerary._id)}
+                  disabled={!isLoggedIn || likedItineraries[itinerary._id]}
+                >
+                  Like
+                </button>
+                <button onClick={toggleModal}>Create Itinerary</button>
+              </div>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Modal */}
+      <Modal show={showModal} onHide={toggleModal} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>
+            {isLoggedIn ? "Create New Itinerary" : "Not Logged In"}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {isLoggedIn ? (
+            <CreateItinerary
+              onSubmit={(newItinerary) => {
+                setItineraries((prevItineraries) => [
+                  ...prevItineraries,
+                  newItinerary,
+                ]);
+                toggleModal();
+              }}
+            />
+          ) : (
+            <div>
+              <p>You need to be logged in to create an itinerary.</p>
+              <Button variant="primary" onClick={() => navigate("/register")}>
+  Go to Register
+</Button>
+
+            </div>
+          )}
+        </Modal.Body>
+      </Modal>
     </>
   );
 }

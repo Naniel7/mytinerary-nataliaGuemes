@@ -1,5 +1,5 @@
 import React from "react";
-import Itineraries from "./Itineraries";
+import Itineraries from "./Itinerary";
 
 function App() {
   const handleItinerarySubmit = (itinerary) => {
