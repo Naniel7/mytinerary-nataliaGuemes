@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import citiesActions from "../stores/actions/citiesAction";
 import itinerariesActions from "../stores/actions/itinerariesActions";
@@ -160,8 +160,8 @@ export default function CityDetails({ data, isLoggedIn }) {
           ) : (
             <div>
               <p>You need to be logged in to create an itinerary.</p>
-              <Button variant="primary" onClick={() => navigate("/register")}>
-  Go to Register
+              <Button variant="primary" onClick={() => navigate("/login")}>
+  Go to Log In
 </Button>
 
             </div>

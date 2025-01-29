@@ -20,7 +20,7 @@ const NavigationBar = ({ login }) => {
           </Link>
           {!login && (
             <Button className="log-btn" variant="info">
-              <Link to="/register" className="nav-link">
+              <Link to="/login" className="nav-link">
                 <BsFillPersonFill className="mr-1 bg-transparent" /> Log In{" "}
                 <i className="bi bi-person-fill"></i>
               </Link>
