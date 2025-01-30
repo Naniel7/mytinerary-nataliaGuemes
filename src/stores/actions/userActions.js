@@ -9,13 +9,20 @@ const registerUser = createAction("registerUser", (formData) => {
   };
 });
 
-const loginUser = createAction("loginUser", (formData) => {
-  return {
-    payload: {
-      formData,
-    },
-  };
-});
+const loginUser = (userData) => async (dispatch) => {
+  try {
+    const response = await axios.post("http://localhost:3000/api/auth/login", userData);
+    console.log("🔹 Respuesta del backend:", response.data);
+
+    if (response.data.success) {
+      dispatch(login(response.data.user)); // Asegúrate de que `response.data.user` existe
+    } else {
+      console.error("🔸 Error: El backend no devolvió success=true");
+    }
+  } catch (error) {
+    console.error("🔸 Error en login:", error);
+  }
+};
 
 const authenticate = createAsyncThunk("authenticate", async () => {
   try {
