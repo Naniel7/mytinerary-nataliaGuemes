@@ -10,12 +10,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LogInForm from "./pages/SignIn";
 import LogUpForm from "./pages/SignUp";
 import Itineraries from "./components/Itinerary";
+import { useDispatch, useSelector } from "react-redux";
+import { checkAuthState, logout } from "./stores/authSlice";
 
 function App() {
   const [data, setData] = useState([]);
-  const [itineraries, setItineraries] = useState([]); // Estado para los itinerarios
+  const [itineraries, setItineraries] = useState([]);
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const user = useSelector((state) => state.auth.user);
 
-  // Fetch de datos inicial
+  useEffect(() => {
+    dispatch(checkAuthState()); // Verifica si el usuario está autenticado al cargar la app
+  }, [dispatch]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,26 +37,36 @@ function App() {
     fetchData();
   }, []);
 
-  // Manejo de la creación de itinerarios
   const handleItinerarySubmit = async (newItinerary) => {
+    if (!isLoggedIn) {
+      alert("Debes iniciar sesión para crear un itinerario");
+      return;
+    }
+
     try {
       const response = await axios.post(
         "http://localhost:3000/api/itineraries",
-        newItinerary
+        newItinerary,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
       );
-      setItineraries((prev) => [...prev, response.data]); // Agrega el nuevo itinerario al estado
+      setItineraries((prev) => [...prev, response.data]);
     } catch (error) {
       console.error("Error creating itinerary:", error);
     }
   };
 
-  // Definición de rutas
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
         <Layout>
-          <Home data={data} />
+          <Home data={data} user={user} onLogout={handleLogout} />
         </Layout>
       ),
     },
@@ -88,17 +106,13 @@ function App() {
       path: "/itineraries",
       element: (
         <Layout>
-          <Itineraries onSubmit={handleItinerarySubmit} />
+          <Itineraries onSubmit={handleItinerarySubmit} isLoggedIn={isLoggedIn} />
         </Layout>
       ),
     },
   ]);
 
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

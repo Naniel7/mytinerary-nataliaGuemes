@@ -138,7 +138,7 @@ export default function CityDetails({ data }) {
             <CreateItinerary
               onSubmit={(newItinerary) => {
                 axios
-                  .post("http://localhost:3000/api/itineraries", newItinerary)
+                  .post("http://localhost:3000/api/itineraries", createItinerary)
                   .then((response) => {
                     setItineraries((prev) => [...prev, response.data]);
                     toggleModal();

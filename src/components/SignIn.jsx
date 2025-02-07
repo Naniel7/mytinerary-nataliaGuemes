@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
-import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useDispatch } from "react-redux";
+import { loginSuccess } from "../stores/authSlice";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ const SignIn = () => {
     password: "",
   });
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,22 +31,20 @@ const SignIn = () => {
       );
 
       if (response.status === 200) {
-        localStorage.setItem("token", response.data.token);
-
-        let messageSucceful = response.data.message;
+        dispatch(loginSuccess({ user: response.data.user, token: response.data.token }));
+        
         Swal.fire({
           icon: "success",
-          text: messageSucceful,
+          text: response.data.message,
         });
         navigate("/", { replace: true });
       } else {
         console.error("Error logging in");
       }
     } catch (error) {
-      let messageError = error.response.data.message;
       Swal.fire({
         icon: "error",
-        text: messageError,
+        text: error.response?.data?.message || "Login failed",
       });
       console.error("Network error", error);
     }
@@ -52,11 +52,7 @@ const SignIn = () => {
 
   const signInWithGoogle = (credentialResponse) => {
     const userData = jwt_decode(credentialResponse.credential);
-
-    const handleGoogleSignIn = {
-      email: userData.email,
-      password: userData.sub,
-    };
+    const handleGoogleSignIn = { email: userData.email, password: userData.sub };
     setFormData(handleGoogleSignIn);
     handleSubmit(handleGoogleSignIn);
   };

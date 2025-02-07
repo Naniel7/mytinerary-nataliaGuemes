@@ -1,40 +1,46 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const getStoredUser = () => {
-  const storedUser = localStorage.getItem("user");
-  return storedUser ? JSON.parse(storedUser) : null;
-};
-
-const initialState = {
-  isLoggedIn: !!getStoredUser(),
-  user: getStoredUser(),
-};
-
 const authSlice = createSlice({
   name: "auth",
-  initialState,
+  initialState: {
+    isLoggedIn: false,
+    user: null,
+    token: localStorage.getItem("token") || null,
+  },
   reducers: {
-    login: (state, action) => {
-      console.log("🔹 Guardando usuario en Redux y localStorage:", action.payload);
+    loginSuccess: (state, action) => {
       state.isLoggedIn = true;
-      state.user = action.payload;
-      localStorage.setItem("user", JSON.stringify(action.payload));
+      state.user = action.payload.user;
+      state.token = action.payload.token;
+      localStorage.setItem("token", action.payload.token);
     },
     logout: (state) => {
-      console.log("🔹 Cerrando sesión");
       state.isLoggedIn = false;
       state.user = null;
-      localStorage.removeItem("user");
-    },
-    checkAuthState: (state) => {
-      console.log("🔹 Verificando estado de autenticación...");
-      const user = getStoredUser();
-      state.isLoggedIn = !!user;
-      state.user = user;
+      state.token = null;
+      localStorage.removeItem("token");
     },
   },
 });
 
-export const { login, logout, checkAuthState } = authSlice.actions;
+export const { loginSuccess, logout } = authSlice.actions;
+
+export const checkAuthState = () => async (dispatch) => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    try {
+      const response = await axios.get("http://localhost:3000/api/auth/me", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (response.data) {
+        dispatch(loginSuccess({ user: response.data, token }));
+      }
+    } catch (error) {
+      console.error("User not authenticated", error);
+      dispatch(logout());
+    }
+  }
+};
+
 export default authSlice.reducer;

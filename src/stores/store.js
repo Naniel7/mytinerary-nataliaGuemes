@@ -6,9 +6,9 @@ import authReducer from "./authSlice";
 
 export const store = configureStore({
   reducer: {
-    citiesReducer,
-    itinerariesReducer,
-    userReducer,
+    cities: citiesReducer,
+    itineraries: itinerariesReducer,
+    user: userReducer,
     auth: authReducer,
   },
 });
